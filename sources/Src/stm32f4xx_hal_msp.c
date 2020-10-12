@@ -35,7 +35,6 @@
 
 /* Includes ------------------------------------------------------------------ */
 #include "stm32f4xx_hal.h"
-#include "stm324x9i_eval.h"
 #include "main.h"
 
 /** @addtogroup USBD_USER

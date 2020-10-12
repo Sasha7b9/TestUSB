@@ -36,5 +36,3 @@ stm324x9i-eval_usbd-hs-in-fs\stm324x9i_eval.o: ..\libs\STM32F4xx_HAL_Driver\Inc\
 stm324x9i-eval_usbd-hs-in-fs\stm324x9i_eval.o: ..\libs\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_usb.h
 stm324x9i-eval_usbd-hs-in-fs\stm324x9i_eval.o: ..\libs\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pcd_ex.h
 stm324x9i-eval_usbd-hs-in-fs\stm324x9i_eval.o: ..\libs\STM324x9I_EVAL\stm324x9i_eval_io.h
-stm324x9i-eval_usbd-hs-in-fs\stm324x9i_eval.o: ..\libs\STM324x9I_EVAL\../Components/stmpe1600/stmpe1600.h
-stm324x9i-eval_usbd-hs-in-fs\stm324x9i_eval.o: ..\libs\STM324x9I_EVAL\../Common/io.h

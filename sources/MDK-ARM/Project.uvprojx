@@ -455,21 +455,6 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>Drivers/BSP/STM324x9I_EVAL</GroupName>
-          <Files>
-            <File>
-              <FileName>stm324x9i_eval.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\libs\STM324x9I_EVAL\stm324x9i_eval.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm324x9i_eval_io.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\libs\STM324x9I_EVAL\stm324x9i_eval_io.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
           <GroupName>Middlewares/STM32_USBD_Library/Core</GroupName>
           <Files>
             <File>
@@ -486,16 +471,6 @@
               <FileName>usbd_core.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\libs\STM32_USB_Device_Library\Core\Src\usbd_core.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Drivers/BSP/Components</GroupName>
-          <Files>
-            <File>
-              <FileName>stmpe1600.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\libs\stmpe1600\stmpe1600.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -1028,21 +1003,6 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>Drivers/BSP/STM324x9I_EVAL</GroupName>
-          <Files>
-            <File>
-              <FileName>stm324x9i_eval.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\libs\STM324x9I_EVAL\stm324x9i_eval.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm324x9i_eval_io.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\libs\STM324x9I_EVAL\stm324x9i_eval_io.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
           <GroupName>Middlewares/STM32_USBD_Library/Core</GroupName>
           <Files>
             <File>
@@ -1059,16 +1019,6 @@
               <FileName>usbd_core.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\libs\STM32_USB_Device_Library\Core\Src\usbd_core.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Drivers/BSP/Components</GroupName>
-          <Files>
-            <File>
-              <FileName>stmpe1600.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\libs\stmpe1600\stmpe1600.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -1602,21 +1552,6 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>Drivers/BSP/STM324x9I_EVAL</GroupName>
-          <Files>
-            <File>
-              <FileName>stm324x9i_eval.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\libs\STM324x9I_EVAL\stm324x9i_eval.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm324x9i_eval_io.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\libs\STM324x9I_EVAL\stm324x9i_eval_io.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
           <GroupName>Middlewares/STM32_USBD_Library/Core</GroupName>
           <Files>
             <File>
@@ -1633,16 +1568,6 @@
               <FileName>usbd_core.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\libs\STM32_USB_Device_Library\Core\Src\usbd_core.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Drivers/BSP/Components</GroupName>
-          <Files>
-            <File>
-              <FileName>stmpe1600.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\libs\stmpe1600\stmpe1600.c</FilePath>
             </File>
           </Files>
         </Group>
