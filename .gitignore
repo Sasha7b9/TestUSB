@@ -1,2 +1,8 @@
 *.d
 *.o
+*.ewd
+*.eww
+*.dep
+*.htm
+*.lnp
+*.axf
