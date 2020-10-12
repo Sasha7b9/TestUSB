@@ -71,9 +71,6 @@ uint32_t UserTxBufPtrIn = 0;    /* Increment this pointer or roll it back to
 uint32_t UserTxBufPtrOut = 0;   /* Increment this pointer or roll it back to
                                  * start address when data are sent over USB */
 
-/* UART handler declaration */
-/* TIM handler declaration */
-TIM_HandleTypeDef TimHandle;
 /* USB handler declaration */
 extern USBD_HandleTypeDef USBD_Device;
 
@@ -83,9 +80,9 @@ static int8_t CDC_Itf_DeInit(void);
 static int8_t CDC_Itf_Control(uint8_t cmd, uint8_t * pbuf, uint16_t length);
 static int8_t CDC_Itf_Receive(uint8_t* pbuf, uint32_t *Len);
 static int8_t CDC_Itf_TransmitCplt(uint8_t *pbuf, uint32_t *Len, uint8_t epnum);
-static void Error_Handler(void);
+//static void Error_Handler(void);
 static void ComPort_Config(void);
-static void TIM_Config(void);
+//static void TIM_Config(void);
 
 USBD_CDC_ItfTypeDef USBD_CDC_fops = {
   CDC_Itf_Init,
@@ -104,17 +101,6 @@ USBD_CDC_ItfTypeDef USBD_CDC_fops = {
   */
 static int8_t CDC_Itf_Init(void)
 {
-  /* ##-3- Configure the TIM Base generation ################################# */
-  TIM_Config();
-
-  /* ##-4- Start the TIM Base generation in interrupt mode #################### */
-  /* Start Channel1 */
-  if (HAL_TIM_Base_Start_IT(&TimHandle) != HAL_OK)
-  {
-    /* Starting Error */
-    Error_Handler();
-  }
-
   /* ##-5- Set Application Buffers ############################################ */
   USBD_CDC_SetTxBuffer(&USBD_Device, UserTxBuffer, 0);
   USBD_CDC_SetRxBuffer(&USBD_Device, UserRxBuffer);
@@ -201,42 +187,6 @@ static int8_t CDC_Itf_Control(uint8_t cmd, uint8_t * pbuf, uint16_t length)
   return (USBD_OK);
 }
 
-/**
-  * @brief  TIM period elapsed callback
-  * @param  htim: TIM handle
-  * @retval None
-  */
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef * htim)
-{
-  uint32_t buffptr;
-  uint32_t buffsize;
-
-  if (UserTxBufPtrOut != UserTxBufPtrIn)
-  {
-    if (UserTxBufPtrOut > UserTxBufPtrIn) /* Rollback */
-    {
-      buffsize = APP_TX_DATA_SIZE - UserTxBufPtrOut;
-    }
-    else
-    {
-      buffsize = UserTxBufPtrIn - UserTxBufPtrOut;
-    }
-
-    buffptr = UserTxBufPtrOut;
-
-    USBD_CDC_SetTxBuffer(&USBD_Device, (uint8_t *) & UserTxBuffer[buffptr],
-                         buffsize);
-
-    if (USBD_CDC_TransmitPacket(&USBD_Device) == USBD_OK)
-    {
-      UserTxBufPtrOut += buffsize;
-      if (UserTxBufPtrOut == APP_RX_DATA_SIZE)
-      {
-        UserTxBufPtrOut = 0;
-      }
-    }
-  }
-}
 
 
 /**
@@ -316,39 +266,15 @@ static void ComPort_Config(void)
   }
 }
 
-/**
-  * @brief  TIM_Config: Configure TIMx timer
-  * @param  None.
-  * @retval None
-  */
-static void TIM_Config(void)
-{
-  /* Set TIMx instance */
-  TimHandle.Instance = TIMx;
-
-  /* Initialize TIM3 peripheral as follows: + Period = (CDC_POLLING_INTERVAL *
-   * 10000) - 1 + Prescaler = ((APB1 frequency / 1000000) - 1) + ClockDivision
-   * = 0 + Counter direction = Up */
-  TimHandle.Init.Period = (CDC_POLLING_INTERVAL * 1000) - 1;
-  TimHandle.Init.Prescaler = 84 - 1;
-  TimHandle.Init.ClockDivision = 0;
-  TimHandle.Init.CounterMode = TIM_COUNTERMODE_UP;
-  if (HAL_TIM_Base_Init(&TimHandle) != HAL_OK)
-  {
-    /* Initialization Error */
-    Error_Handler();
-  }
-}
-
 
 /**
   * @brief  This function is executed in case of error occurrence.
   * @param  None
   * @retval None
   */
-static void Error_Handler(void)
-{
-  /* Add your own code here */
-}
+//static void Error_Handler(void)
+//{
+//  /* Add your own code here */
+//}
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

@@ -36,10 +36,6 @@
 extern PCD_HandleTypeDef hpcd;
 
 
-
-/* TIM handler declared in "usbd_cdc_interface.c" file */
-extern TIM_HandleTypeDef TimHandle;
-
 /* Private function prototypes ----------------------------------------------- */
 /* Private functions --------------------------------------------------------- */
 
@@ -176,16 +172,6 @@ void OTG_HS_IRQHandler(void)
   * @param  None
   * @retval None
   */
-
-/**
-  * @brief  This function handles TIM interrupt request.
-  * @param  None
-  * @retval None
-  */
-void TIMx_IRQHandler(void)
-{
-  HAL_TIM_IRQHandler(&TimHandle);
-}
 
 /**
   * @brief  This function handles PPP interrupt request.
