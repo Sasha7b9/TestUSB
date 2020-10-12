@@ -199,7 +199,11 @@ static int8_t CDC_Itf_Control(uint8_t cmd, uint8_t * pbuf, uint16_t length)
   */
 static int8_t CDC_Itf_Receive(uint8_t * Buf, uint32_t * Len)
 {
-  return (USBD_OK);
+   USBD_CDC_SetTxBuffer(&USBD_Device, Buf, *Len);
+   USBD_CDC_TransmitPacket(&USBD_Device);
+   USBD_CDC_ReceivePacket(&USBD_Device);
+   
+   return (USBD_OK);
 }
 
 /**
