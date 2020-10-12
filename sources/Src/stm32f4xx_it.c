@@ -35,8 +35,7 @@
 /* Private variables --------------------------------------------------------- */
 extern PCD_HandleTypeDef hpcd;
 
-/* UART handler declared in "usbd_cdc_interface.c" file */
-extern UART_HandleTypeDef UartHandle;
+
 
 /* TIM handler declared in "usbd_cdc_interface.c" file */
 extern TIM_HandleTypeDef TimHandle;
@@ -172,20 +171,11 @@ void OTG_HS_IRQHandler(void)
   * @param  None
   * @retval None
   */
-void USARTx_DMA_TX_IRQHandler(void)
-{
-  HAL_DMA_IRQHandler(UartHandle.hdmatx);
-}
-
 /**
   * @brief  This function handles UART interrupt request.  
   * @param  None
   * @retval None
   */
-void USARTx_IRQHandler(void)
-{
-  HAL_UART_IRQHandler(&UartHandle);
-}
 
 /**
   * @brief  This function handles TIM interrupt request.

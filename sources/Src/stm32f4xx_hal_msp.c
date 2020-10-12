@@ -62,10 +62,7 @@
   * @param huart: UART handle pointer
   * @retval None
   */
-void HAL_UART_MspInit(UART_HandleTypeDef * huart)
-{
 
-}
 
 /**
   * @brief UART MSP De-Initialization 
@@ -75,10 +72,7 @@ void HAL_UART_MspInit(UART_HandleTypeDef * huart)
   * @param huart: UART handle pointer
   * @retval None
   */
-void HAL_UART_MspDeInit(UART_HandleTypeDef * huart)
-{
 
-}
 
 /**
   * @}
