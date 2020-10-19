@@ -41,14 +41,8 @@ static bool PrevSendingComplete(void)
 
 void VCP::SendDataAsinch(uint8 *buffer, int size)
 {
-    lastTimeSend = gTimerMS;
-
     const int SIZE_BUFFER = 64;
     static uint8 trBuf[SIZE_BUFFER];
-
-    size = Math_MinInt(size, SIZE_BUFFER);
-    while (!PrevSendingComplete())  {};
-    memcpy(trBuf, buffer, size);
 
     USBD_CDC_SetTxBuffer(&handleUSBD, trBuf, (uint16)size);
     USBD_CDC_TransmitPacket(&handleUSBD);
