@@ -26,14 +26,7 @@ class Timer
 {
 public:
     static void Enable(TypeTimer type, int timeInMS, pFuncVV);
-    /// Остановить таймер.
     static void Disable(TypeTimer type);
-    /// Приостановить таймер. Запустить снова можно функцией Timer_Continue().
-    static void Pause(TypeTimer type);
-    /// Продолжить работу таймера, ранее приостановленного функцией Timer_Pause().
-    static void Continue(TypeTimer type);
-    /// С помощью этой функции можно узнать, работает ли таймер.
-    static bool IsRun(TypeTimer type);
 };
 
 #define gTimerMS HAL_GetTick()
