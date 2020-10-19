@@ -13,8 +13,5 @@ static bool isRun[TypeTimerSize] = {false};
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 void Timer::Enable(TypeTimer type, int timeInMS, void(*eF)())
 {
-    //f[type] = eF;
-    //reactionTimeMS[type] = timeInMS;
-    //currentTimeMS[type] = timeInMS - 1;
     isRun[type] = true;
 }
