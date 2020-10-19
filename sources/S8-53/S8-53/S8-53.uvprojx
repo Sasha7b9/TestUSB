@@ -712,11 +712,6 @@
               <FilePath>.\src\Hardware\Hardware.cpp</FilePath>
             </File>
             <File>
-              <FileName>MSP_USBH.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Hardware\MSP_USBH.cpp</FilePath>
-            </File>
-            <File>
               <FileName>Timer.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>.\src\Hardware\Timer.cpp</FilePath>
