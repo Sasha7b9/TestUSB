@@ -423,11 +423,6 @@
           <GroupName>libs</GroupName>
           <Files>
             <File>
-              <FileName>stm32f2xx_it.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\libs\stm32f2xx_it.h</FilePath>
-            </File>
-            <File>
               <FileName>usbd_cdc_interface.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\src\libs\usbd_cdc_interface.h</FilePath>
@@ -448,11 +443,6 @@
               <FilePath>.\src\libs\usbd_cdc_interface.cpp</FilePath>
             </File>
             <File>
-              <FileName>stm32f2xx_it.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\libs\stm32f2xx_it.cpp</FilePath>
-            </File>
-            <File>
               <FileName>usbd_conf.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>.\src\libs\usbd_conf.cpp</FilePath>
@@ -461,6 +451,16 @@
               <FileName>usbd_desc.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>.\src\libs\usbd_desc.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f2xx_it.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\libs\stm32f2xx_it.h</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f2xx_it.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\src\libs\stm32f2xx_it.cpp</FilePath>
             </File>
             <File>
               <FileName>stm32f4xx_hal_conf.h</FileName>
