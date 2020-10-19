@@ -32,7 +32,6 @@ static bool isRun[TypeTimerSize] = {false};
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 void Timer_Enable(TypeTimer type, int timeInMS, void(*eF)())
 {
-    isRun[type] = true;
 }
 
 
