@@ -6,3 +6,6 @@
 *.htm
 *.lnp
 *.axf
+*.crf
+*.dbgconf
+*.lst
