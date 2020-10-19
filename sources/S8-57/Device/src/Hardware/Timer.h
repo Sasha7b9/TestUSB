@@ -54,8 +54,6 @@ struct Timer
     // Возвращает true, если таймер в данный момент ведёт отсчёт
     static bool IsRunning(TypeTimer::E type);
 
-    static void PauseOnTime(uint timeMS);
-
     static void PauseOnTicks(uint numTicks);
     // Запускает счётчик для измерения малых отрезков времени
     static void StartMultiMeasurement();

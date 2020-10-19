@@ -17,8 +17,6 @@ void Device::Init()
 
     Timer::Init();
 
-    PAUSE_ON_MS(500);
-
     VCP::Init();
 
     SetCurrentMode();
