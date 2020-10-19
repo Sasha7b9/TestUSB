@@ -1,10 +1,7 @@
 #pragma once
 #include "defines.h"
 #include <usbd_def.h>
-#include <usbh_def.h>
 
-
-extern HCD_HandleTypeDef handleHCD;
 
 #define CLIENT_LAN_IS_CONNECTED  (gBF.clientLANisConnected)
 #define CABLE_LAN_IS_CONNECTED   (gBF.cableLANisConnected)

@@ -68,12 +68,6 @@ void SysTick_Handler(void)
   HAL_IncTick();
 }
 
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-void OTG_HS_IRQHandler(void)
-{
-    HAL_HCD_IRQHandler(&handleHCD);
-}
-
 #ifdef __cplusplus
 }
 #endif

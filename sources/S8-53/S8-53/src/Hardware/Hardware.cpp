@@ -5,18 +5,6 @@
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-static TIM_HandleTypeDef handleTIM6forTimer =
-{
-    TIM6,
-    {
-        119,                    // Init.Prescaler
-        TIM_COUNTERMODE_UP,     // Init.CounterMode
-        500,                    // Init.Period
-        TIM_CLOCKDIVISION_DIV1  // Init.ClockDivision
-    }
-};
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 static void SystemClock_Config();
 
 
@@ -32,13 +20,6 @@ void Hardware::Init(void)
     __SYSCFG_CLK_ENABLE();
 
     HAL_NVIC_SetPriority(SysTick_IRQn, 0, 0);
-
-    static CRC_HandleTypeDef crcHandle = {CRC};
-
-    if (HAL_CRC_Init(&crcHandle) != HAL_OK)
-    {
-        HARDWARE_ERROR;
-    }
 }
 
 
