@@ -1,5 +1,6 @@
 #include "defines.h"
 #include "Globals.h"
+#include <stm32f2xx_hal.h>
 
 void *extraMEM = 0;
 
