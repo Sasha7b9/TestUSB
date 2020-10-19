@@ -10,13 +10,6 @@ static int currentTimeMS[TypeTimerSize] = {0};
 static bool isRun[TypeTimerSize] = {false};
 
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-void Timer::PauseOnTicks(uint numTicks)
-{
-    uint startTicks = gTimerTics;
-    while (gTimerTics - startTicks < numTicks) {};
-}
-
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 void Timer::StartMultiMeasurement(void)
 {
@@ -86,24 +79,6 @@ bool Timer_IsRun(TypeTimer type)
 {
     return isRun[type];
 };
-
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-void Timer::Update1ms(void)
-{
-    for(int num = 0; num < TypeTimerSize; num++)
-    {
-        if(isRun[num])
-        {
-            currentTimeMS[num]--;
-            if(currentTimeMS[num] < 0)
-            {
-                f[num]();
-                currentTimeMS[num] = reactionTimeMS[num] - 1;
-            }
-            
-        }
-    }
-}
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 void Timer_Update10ms(void)

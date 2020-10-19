@@ -25,15 +25,6 @@ typedef enum
 class Timer
 {
 public:
-    /// Задержка на timeMS миллисекунд
-//    static void PauseOnTime(uint timeMS) { HAL_Delay(timeMS); };
-
-    static void PauseOnTicks(uint numTicks);
-    /// Функция вызывается по прерыванию системного таймера для работы таймеров. Увеличивает внутренее время таймеров на 1мс.
-    static void Update1ms();
-    /// Функция вызывается по прерыванию системного таймера для работы таймеров. Увеличивает внутреннее время таймеров на 10мс.
-    static void Update10ms();
-         
     static void Enable(TypeTimer type, int timeInMS, pFuncVV);
     /// Остановить таймер.
     static void Disable(TypeTimer type);
