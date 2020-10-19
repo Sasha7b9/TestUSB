@@ -15,7 +15,7 @@ int main(void)
 {
     Hardware::Init();
     VCP::Init();
-    Timer::PauseOnTime(250);
+//    Timer::PauseOnTime(250);
 
     while(1)
     {
