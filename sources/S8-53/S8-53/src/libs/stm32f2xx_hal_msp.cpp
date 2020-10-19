@@ -59,16 +59,3 @@ void HAL_DAC_MspDeInit(DAC_HandleTypeDef* hdac)
 {
 
 }
-
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-void HAL_CRC_MspInit(CRC_HandleTypeDef *hcrc)
-{
-    __HAL_RCC_CRC_CLK_ENABLE();
-}
-
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-void HAL_CRC_MspDeInit(CRC_HandleTypeDef *hcrc)
-{
-    __HAL_RCC_CRC_FORCE_RESET();
-    __HAL_RCC_CRC_RELEASE_RESET();
-}
