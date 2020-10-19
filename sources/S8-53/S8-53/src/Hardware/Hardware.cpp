@@ -5,7 +5,6 @@
 #include <stm32f2xx_hal_rcc.h>
 #include <stm32f2xx_hal_dac.h>
 #include "Hardware.h"
-#include "Hardware/CLOCK.h"
 #include "Hardware/Timer.h"
 #include "Log.h"
 
@@ -117,8 +116,6 @@ void Hardware::Init(void)
     HAL_GPIO_Init(GPIOG, &isGPIOG);
     
     HAL_GPIO_WritePin(GPIOG, GPIO_PIN_1, GPIO_PIN_RESET);                   // PG1 - когда равен 1, чтение дисплея, в остальных случаях 0
-
-    Clock::Init();
 
     crcHandle.Instance = CRC;
     if (HAL_CRC_Init(&crcHandle) != HAL_OK)

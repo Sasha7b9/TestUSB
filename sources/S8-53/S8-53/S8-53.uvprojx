@@ -671,16 +671,6 @@
               <FileType>8</FileType>
               <FilePath>.\src\Hardware\Timer.cpp</FilePath>
             </File>
-            <File>
-              <FileName>CLOCK.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Hardware\CLOCK.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>CLOCK.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\Hardware\CLOCK.h</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>
