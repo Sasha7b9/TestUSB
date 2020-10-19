@@ -67,36 +67,6 @@ void VCP::Flush()
 
 void VCP::SendDataSynch(const uint8 *buffer, int size)
 {
-    if (CLIENT_VCP_IS_CONNECTED == 0)
-    {
-        return;
-    }
-
-    lastTimeSend = gTimerMS;
-
-    USBD_CDC_HandleTypeDef *pCDC = (USBD_CDC_HandleTypeDef *)handleUSBD.pClassData;
-
-    do 
-    {
-        if (sizeBuffer + size > SIZE_BUFFER_VCP)
-        {
-            int reqBytes = SIZE_BUFFER_VCP - sizeBuffer;
-            LIMITATION(reqBytes, reqBytes, 0, size);
-            while (pCDC->TxState == 1) {};
-            memcpy(buffSend + sizeBuffer, buffer, reqBytes);
-            USBD_CDC_SetTxBuffer(&handleUSBD, buffSend, SIZE_BUFFER_VCP);
-            USBD_CDC_TransmitPacket(&handleUSBD);
-            size -= reqBytes;
-            buffer += reqBytes;
-            sizeBuffer = 0;
-        }
-        else
-        {
-            memcpy(buffSend + sizeBuffer, buffer, size);
-            sizeBuffer += size;
-            size = 0;
-        }
-    } while (size);
 }
 
 void SendData(const uint8 *buffer, int size)
