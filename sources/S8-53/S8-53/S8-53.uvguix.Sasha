@@ -3606,9 +3606,9 @@
       <ActiveTab>0</ActiveTab>
       <Doc>
         <Name>.\src\libs\usbd_cdc_interface.cpp</Name>
-        <ColumnNumber>0</ColumnNumber>
-        <TopLine>25</TopLine>
-        <CurrentLine>35</CurrentLine>
+        <ColumnNumber>6</ColumnNumber>
+        <TopLine>43</TopLine>
+        <CurrentLine>79</CurrentLine>
         <Folding>1</Folding>
         <ContractedFolders></ContractedFolders>
         <PaneID>0</PaneID>
