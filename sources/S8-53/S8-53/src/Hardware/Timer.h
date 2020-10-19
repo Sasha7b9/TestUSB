@@ -27,5 +27,3 @@ class Timer
 public:
     static void Enable(TypeTimer type, int timeInMS, pFuncVV);
 };
-
-#define gTimerMS HAL_GetTick()
