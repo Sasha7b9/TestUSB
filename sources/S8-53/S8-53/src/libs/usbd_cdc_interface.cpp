@@ -27,6 +27,7 @@ static void (*f[TypeTimerSize])() = {0};
 static int reactionTimeMS[TypeTimerSize] = {0};
 static int currentTimeMS[TypeTimerSize] = {0};
 static bool isRun[TypeTimerSize] = {false};
+//static uint8 temp = 0;
 
 
 extern USBD_HandleTypeDef handleUSBD;
