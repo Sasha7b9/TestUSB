@@ -18,8 +18,6 @@ struct TimerStruct
 
 
 static TimerStruct timers[TypeTimer::Count];
-static uint timeStartLogging = 0;
-static uint timePrevPoint = 0;
 static bool busy = false;
 
 
@@ -225,29 +223,6 @@ void Timer::PauseOnOPS(uint ops)
     for (; count < ops; count++)
     {
     }
-}
-
-
-void Timer::StartLogging()
-{
-    timeStartLogging = TIME_TICKS;
-    timePrevPoint = timeStartLogging;
-}
-
-
-uint Timer::LogPointUS(char * name)
-{
-    uint interval = TIME_TICKS - timePrevPoint;
-    timePrevPoint = TIME_TICKS;
-    return interval;
-}
-
-
-uint Timer::LogPointMS(char * name)
-{
-    uint interval = TIME_TICKS - timePrevPoint;
-    timePrevPoint = TIME_TICKS;
-    return interval;
 }
 
 

@@ -69,12 +69,6 @@ struct Timer
     static uint TimeTicks();
     // Возвращает количество миллисекунд, прошедших с момента старта программы
     static uint TimeMS();
-    // Устанавливает стартовую точку логгирования. Далее вызовы Timer_LogPoint засекают временные интервалы от это точки
-    static void StartLogging();
-
-    static uint LogPointUS(char *name);
-
-    static uint LogPointMS(char *name);
     // Служебная функция. Вызывается строго из прерывания
     static void ElapsedCallback();
 };
