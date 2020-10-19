@@ -22,8 +22,4 @@ typedef enum
 } TypeTimer;
 
 
-class Timer
-{
-public:
-    static void Enable(TypeTimer type, int timeInMS, pFuncVV);
-};
+void Timer_Enable(TypeTimer type, int timeInMS, pFuncVV);

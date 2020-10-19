@@ -46,7 +46,7 @@ static void SetAttributeConnected()
 static int8_t CDC_Itf_Init(void)
 {
     USBD_CDC_SetRxBuffer(&handleUSBD, UserRxBuffer);
-    Timer::Enable(kTemp, 100, SetAttributeConnected);    // GOVNOCODE Задержка введена для того, чтобы не было ложных срабатываний в 
+    Timer_Enable(kTemp, 100, SetAttributeConnected);    // GOVNOCODE Задержка введена для того, чтобы не было ложных срабатываний в 
     return (USBD_OK);                                   // usbd_conf.c:HAL_PCD_SetupStageCallback при определении подключения хоста
 }
 

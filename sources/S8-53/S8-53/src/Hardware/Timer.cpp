@@ -11,7 +11,7 @@ static bool isRun[TypeTimerSize] = {false};
 
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
-void Timer::Enable(TypeTimer type, int timeInMS, void(*eF)())
+void Timer_Enable(TypeTimer type, int timeInMS, void(*eF)())
 {
     isRun[type] = true;
 }
