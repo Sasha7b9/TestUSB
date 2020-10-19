@@ -30,13 +30,6 @@ USBD_CDC_ItfTypeDef USBD_CDC_fops =
 };
 
 
-static void SetAttributeConnected()
-{
-    VCP::cableUSBisConnected = true;
-    VCP::connectedToUSB = false;
-}
-
-
 static int8_t CDC_Itf_Init()
 {
     USBD_CDC_SetRxBuffer(reinterpret_cast<USBD_HandleTypeDef *>(VCP::handleUSBD), UserRxBuffer);
