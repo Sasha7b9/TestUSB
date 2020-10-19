@@ -1,8 +1,6 @@
 #include "defines.h"
 #include "VCP.h"
 #include "Log.h"
-#include "Utils/Math.h"
-#include "SCPI/SCPI.h"
 #include "usbd_desc.h"
 #include "usbd_cdc_interface.h"
 #include "Hardware/Timer.h"
@@ -11,6 +9,14 @@
 #include <stdarg.h>
 #include <string.h>
 #include <stdio.h>
+
+
+#define LIMITATION(var, value, min, max)    var = (value); if(var < (min)) { var = (min); } else if(var > (max)) { var = (max); };
+
+int Math_MinInt(int val1, int val2)
+{
+    return val1 < val2 ? val1 : val2;
+}
 
 
 USBD_HandleTypeDef handleUSBD;

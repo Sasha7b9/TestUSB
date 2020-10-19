@@ -1,8 +1,5 @@
 #pragma once
-#include "Panel/Controls.h"
-#include "Settings/SettingsTypes.h"
-#include "Settings/SettingsChannel.h"
-#include "Settings/SettingsTime.h"
+#include "defines.h"
 #include <stm32f2xx_hal_def.h>
 #include "stm32f2xx_hal_conf.h"
 #include <stm32f2xx_hal_hcd.h>
@@ -215,21 +212,21 @@ typedef struct
     uint        rShiftCh1       : 10;
     uint        trigLevCh0      : 10;   // Уровень синхронизации
     int16       tShift;                 // Смещение по времени
-    ModeCouple  modeCouple1     : 2;
-    Range       range[2];               // Масштаб по напряжению обоих каналов.
+    uint8       modeCouple1     : 2;
+    uint8       range[2];               // Масштаб по напряжению обоих каналов.
 
     uint        trigLevCh1      : 10;
     uint        length1channel  : 11;   // Сколько занимает в байтах длина измерения одного канала
-    TBase       tBase           : 5;    // Масштаб по времени
-    ModeCouple  modeCouple0     : 2;    // Режим канала по входу
+    uint8       tBase           : 5;    // Масштаб по времени
+    uint8  modeCouple0     : 2;    // Режим канала по входу
     uint        peakDet         : 2;    // Включен ли пиковый детектор
     uint        enableCh0       : 1;    // Включён ли канал 0
     uint        enableCh1       : 1;    // Включен ли канал 1
 
     uint        inverseCh0      : 1;
     uint        inverseCh1      : 1;
-    Divider  multiplier0     : 1;
-    Divider  multiplier1     : 1;
+    uint8  multiplier0     : 1;
+    uint8  multiplier1     : 1;
     PackedTime  time;
 } DataSettings;
 

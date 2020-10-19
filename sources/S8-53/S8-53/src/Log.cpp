@@ -1,6 +1,4 @@
 #include "Log.h"
-#include "Display/Display.h"
-#include "Settings/Settings.h"
 #include "VCP/VCP.h"
 #include <stdarg.h>
 
@@ -19,7 +17,6 @@ void Log_Write(char *format, ...)
     va_start(args, format);
     vsprintf(buffer, format, args);
     va_end(args);
-    Display::AddStringToIndicating(buffer);
     if(loggerUSB)
     {
         //VCP::SendFormatStringAsynch(buffer);
@@ -44,8 +41,6 @@ void Log_Error(const char *module, const char *func, int numLine, char *format, 
     strcat(message, " ");
     strcat(message, func);
     strcat(message, numBuffer);
-    Display::AddStringToIndicating(message);
-    Display::AddStringToIndicating(buffer);
     if(loggerUSB)
     {
         //VCP::SendFormatStringAsynch(message);

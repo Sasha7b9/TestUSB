@@ -1,8 +1,6 @@
 #include "Clock.h"
 #include "Hardware/Hardware.h"
 #include "Log.h"
-#include "Display/Display.h"
-#include "Menu/Menu.h"
 #include <stm32f2xx_hal.h>
 #include <stm32f2xx_hal_rtc.h>
 

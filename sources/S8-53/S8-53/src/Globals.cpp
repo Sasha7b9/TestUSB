@@ -1,6 +1,5 @@
 #include "defines.h"
 #include "Globals.h"
-#include "Display/DisplayTypes.h"
 
 void *extraMEM = 0;
 
@@ -88,7 +87,7 @@ BitField gBF =
 
     0,  // showDebugMenu
 
-    GRID_BOTTOM, // topMeasures
+    0, // topMeasures
  
     0,  // needOpenFileManager
     1,  // needClosePageSB

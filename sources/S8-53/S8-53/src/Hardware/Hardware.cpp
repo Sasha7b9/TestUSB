@@ -5,17 +5,9 @@
 #include <stm32f2xx_hal_rcc.h>
 #include <stm32f2xx_hal_dac.h>
 #include "Hardware.h"
-#include "ADC.h"
-#include "Sound.h"
 #include "Hardware/CLOCK.h"
-#include "FSMC.h"
-#include "Utils/GlobalFunctions.h"
 #include "Hardware/Timer.h"
 #include "Log.h"
-#include "Ethernet/Ethernet.h"
-#include "Display/Display.h"
-#include "FlashDrive/FlashDrive.h"
-#include "Panel/Panel.h"
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -105,17 +97,7 @@ void Hardware::Init(void)
     {
         HARDWARE_ERROR
     }
-
-    Sound::Init();
-    
-    Panel::Init();
-
-    FSMC::Init();
-
-    ADConverter::Init();
-
-    FlashDrive::Init();
-    
+   
 // Analog and DAC programmable SPI ////////////////////////////////////////
 
     GPIO_InitTypeDef isGPIOG =

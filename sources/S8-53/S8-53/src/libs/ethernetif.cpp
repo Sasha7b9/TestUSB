@@ -3,7 +3,6 @@
 #include "netif/etharp.h"
 #include "ethernetif.h"
 #include <string.h>
-#include "Settings/Settings.h"
 #include "Hardware/Timer.h"
 
 
