@@ -9,12 +9,7 @@
 #include <usbh_def.h>
 
 
-extern USBH_HandleTypeDef handleUSBH;
 extern HCD_HandleTypeDef handleHCD;
-extern SPI_HandleTypeDef handleSPI;
-extern ADC_HandleTypeDef handleADC;
-extern DAC_HandleTypeDef handleDAC;
-
 
 #define CLIENT_LAN_IS_CONNECTED  (gBF.clientLANisConnected)
 #define CABLE_LAN_IS_CONNECTED   (gBF.cableLANisConnected)
