@@ -30,7 +30,6 @@ void SetCurrentMode()
 
 void Device::Update()
 {
-    Timer::StartMultiMeasurement();
 }
 
 

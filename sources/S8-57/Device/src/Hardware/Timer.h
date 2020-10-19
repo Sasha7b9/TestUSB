@@ -51,15 +51,6 @@ struct Timer
     static void Enable(TypeTimer::E type);
 
     static void Disable(TypeTimer::E type);
-    // Возвращает true, если таймер в данный момент ведёт отсчёт
-    static bool IsRunning(TypeTimer::E type);
-
-    static void PauseOnTicks(uint numTicks);
-    // Запускает счётчик для измерения малых отрезков времени
-    static void StartMultiMeasurement();
-    // Ожидать определённое число элементарных операция в цилке for
-    static void PauseOnOPS(uint ops);
-
     static bool IsBusy();
     // Возвращает количество микросекунд, прошедших с момента последнего вызова StartMultiMeasurement()
     static uint TimeUS();

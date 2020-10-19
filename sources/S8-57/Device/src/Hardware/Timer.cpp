@@ -36,12 +36,6 @@ static uint NearestTime();
 // Настроить систему на таймер
 static void TuneTIM(::TypeTimer::E type);
 
-bool ::Timer::IsRunning(::TypeTimer::E type)
-{
-    return TIME_NEXT(type) != UINT_MAX; //-V2523
-}
-
-
 void Timer::Init()
 {
     for(uint i = 0; i < TypeTimer::Count; i++)
@@ -203,23 +197,6 @@ static void StopTIM()
 }
 
 
-void Timer::PauseOnTicks(uint numTicks)
-{
-    volatile uint startTicks = TIME_TICKS;
-
-    while (TIME_TICKS - startTicks < numTicks)    {};
-}
-
-
-void Timer::PauseOnOPS(uint ops)
-{
-    volatile uint count = 0;
-    for (; count < ops; count++)
-    {
-    }
-}
-
-
 uint Timer::TimeUS()
 {
     return HAL_TIM2::TimeUS();
@@ -235,14 +212,6 @@ uint Timer::TimeTicks()
 uint Timer::TimeMS()
 {
     return HAL::TimeMS();
-}
-
-
-void Timer::StartMultiMeasurement()
-{
-    busy = true;
-    HAL_TIM2::StartMultiMeasurement();
-    busy = false;
 }
 
 
