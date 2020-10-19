@@ -21,18 +21,11 @@ static TIM_HandleTypeDef handleTIM6forTimer =
     }
 };
 
-static CRC_HandleTypeDef crcHandle = {CRC};
-
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 static void SystemClock_Config();
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-#ifdef __cplusplus
-extern "C" {
-#endif
-    
 void Hardware::Init(void)
 {
     HAL_Init();
@@ -63,18 +56,13 @@ void Hardware::Init(void)
     }
 
   
-// Analog and DAC programmable SPI ////////////////////////////////////////
+    static CRC_HandleTypeDef crcHandle = {CRC};
 
     if (HAL_CRC_Init(&crcHandle) != HAL_OK)
     {
         HARDWARE_ERROR;
     }
 }
-
-#ifdef __cplusplus
-}
-#endif
-
 
 
 #ifdef __cplusplus
