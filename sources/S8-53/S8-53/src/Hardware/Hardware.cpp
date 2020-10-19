@@ -1,5 +1,4 @@
-#include <stm32f207xx.h>
-#include <stm32f2xx_hal.h>
+#include <stm32f4xx_hal.h>
 #include "Hardware.h"
 #include "Log.h"
 
