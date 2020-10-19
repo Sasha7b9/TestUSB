@@ -1,6 +1,5 @@
 #include "defines.h"
 #include "device.h"
-#include "Hardware/Timer.h"
 #include "Hardware/VCP.h"
 #include "Hardware/HAL/HAL.h"
 #include <cstdlib>
@@ -14,8 +13,6 @@ static Device::Mode::E currentMode = Device::Mode::Osci;
 void Device::Init()
 {
     HAL::Init();
-
-    Timer::Init();
 
     VCP::Init();
 

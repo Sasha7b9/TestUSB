@@ -1,5 +1,4 @@
 #include "defines.h"
-#include "Hardware/Timer.h"
 #include "Hardware/VCP.h"
 #include "Hardware/HAL/HAL.h"
 #include "Hardware/HAL/HAL_PINS.h"
@@ -17,44 +16,9 @@ void HardFault_Handler()
     }
 }
 
-
-void TIM3_IRQHandler()
-{
-    if ((TIM3->SR & TIM_SR_UIF) == TIM_SR_UIF)
-    {
-        if ((TIM3->DIER & TIM_DIER_UIE) == TIM_DIER_UIE)
-        {
-            TIM3->SR = ~TIM_DIER_UIE;
-            Timer::ElapsedCallback();
-        }
-    }
-}
-
-/*
-void TIM5_IRQHandler()
-{
-    if ((TIM5->SR & TIM_SR_UIF) == TIM_SR_UIF)
-    {
-        if ((TIM5->DIER & TIM_DIER_UIE) == TIM_DIER_UIE)
-        {
-            TIM5->SR = ~TIM_DIER_UIE;
-
-            HAL_TIM5::ElapsedCallback();
-        }
-    }
-}
-*/
-
-
 void SysTick_Handler(void)
 {
     HAL_IncTick();
-}
-
-
-void EXTI9_5_IRQHandler(void)
-{
-    HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_9);       // Тестер компонентов
 }
 
 
@@ -68,28 +32,6 @@ void OTG_FS_IRQHandler()
 // Флешка
 void OTG_HS_IRQHandler()
 {
-//    static uint startFrame = 0;
-//
-//    static uint counterTicks = 0;
-//
-//    uint start = TIME_TICKS;
-//
-//    HAL_HCD_IRQHandler(&HAL_HCD::handle);
-//
-//    uint end = TIME_TICKS;
-//
-//    counterTicks += (end - start);
-//
-//    if(TIME_MS - startFrame >= 1000)
-//    {
-//        LOG_WRITE("мс на прерывание за секунду %d", counterTicks / 1000 / 90);
-//        counterTicks = 0;
-//        startFrame = TIME_MS;
-//        Timer::StartMultiMeasurement();
-//    }
-
-
-//    HAL_HCD_IRQHandler(reinterpret_cast<HCD_HandleTypeDef *>(HAL_HCD::handleHCD));
 }
 
 

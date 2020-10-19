@@ -1,6 +1,5 @@
 #include "defines.h"
 #include "device.h"
-#include "Hardware/Timer.h"
 
 
 int main(void)
