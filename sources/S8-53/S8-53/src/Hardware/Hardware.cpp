@@ -129,9 +129,3 @@ static void SystemClock_Config(void)
         HARDWARE_ERROR
     }
 }
-
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-uint Hardware::CalculateCRC32(uint address, uint numBytes)
-{
-    return HAL_CRC_Calculate(&crcHandle, (uint *)address, numBytes);
-}
