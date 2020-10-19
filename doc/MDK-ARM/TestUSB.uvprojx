@@ -10,6 +10,7 @@
       <TargetName>TestUSB</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
+      <pCCUsed>5060960::V5.06 update 7 (build 960)::.\ARMCC</pCCUsed>
       <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
@@ -51,9 +52,9 @@
           <OutputName>TestUSB</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
-          <CreateHexFile>1</CreateHexFile>
+          <CreateHexFile>0</CreateHexFile>
           <DebugInformation>1</DebugInformation>
-          <BrowseInformation>1</BrowseInformation>
+          <BrowseInformation>0</BrowseInformation>
           <ListingPath></ListingPath>
           <HexFormatSelection>1</HexFormatSelection>
           <Merge32K>0</Merge32K>
@@ -390,6 +391,9 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>::CMSIS</GroupName>
+        </Group>
+        <Group>
           <GroupName>Application/User/Core</GroupName>
           <Files>
             <File>
@@ -513,9 +517,6 @@
               <FilePath>../Core/Src/system_stm32f4xx.c</FilePath>
             </File>
           </Files>
-        </Group>
-        <Group>
-          <GroupName>::CMSIS</GroupName>
         </Group>
       </Groups>
     </Target>
