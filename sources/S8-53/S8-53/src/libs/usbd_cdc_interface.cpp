@@ -41,7 +41,7 @@ static void SetAttributeConnected()
 {
     CABLE_VCP_IS_CONNECTED = 1;
     CLIENT_VCP_IS_CONNECTED = 0;
-    Timer::Disable(kTemp);
+//    Timer::Disable(kTemp);
 }
 
 

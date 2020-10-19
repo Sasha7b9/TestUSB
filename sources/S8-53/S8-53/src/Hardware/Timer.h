@@ -26,14 +26,6 @@ class Timer
 {
 public:
     static void Enable(TypeTimer type, int timeInMS, pFuncVV);
-    static void Disable(TypeTimer type);
 };
 
 #define gTimerMS HAL_GetTick()
-
-/**
-  * gTimerTics - количество тиков, прошедших с момента последнего вызова функции Timer_StartMultiMeasurement().
-  * В одной секунде 120.000.000 тиков. Максимальный отрезок времени, который можно отсчитать с её помощью - 35 сек.
-  * Количество тиков, прошедших с момента последнего вызова функции Timer_StartMultiMeasurement(). Не более (1 << 32).
-***/
-#define gTimerTics (TIM2->CNT)
