@@ -564,11 +564,6 @@
               <FilePath>.\src\libs\usbh_conf.h</FilePath>
             </File>
             <File>
-              <FileName>ffconf.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\libs\ffconf.h</FilePath>
-            </File>
-            <File>
               <FileName>usbd_cdc_interface.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\src\libs\usbd_cdc_interface.h</FilePath>
@@ -582,21 +577,6 @@
               <FileName>usbd_desc.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\src\libs\usbd_desc.h</FilePath>
-            </File>
-            <File>
-              <FileName>app_ethernet.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\libs\app_ethernet.h</FilePath>
-            </File>
-            <File>
-              <FileName>ethernetif.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\libs\ethernetif.h</FilePath>
-            </File>
-            <File>
-              <FileName>lwipopts.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\libs\lwipopts.h</FilePath>
             </File>
             <File>
               <FileName>usbd_cdc_interface.cpp</FileName>
