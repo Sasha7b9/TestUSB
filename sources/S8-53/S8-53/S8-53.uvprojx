@@ -14,16 +14,16 @@
       <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
-          <Device>STM32F207ZCTx</Device>
+          <Device>STM32F401RETx</Device>
           <Vendor>STMicroelectronics</Vendor>
-          <PackID>Keil.STM32F2xx_DFP.2.9.0</PackID>
-          <PackURL>http://www.keil.com/pack</PackURL>
-          <Cpu>IRAM(0x20000000,0x20000) IROM(0x08000000,0x40000) CPUTYPE("Cortex-M3") CLOCK(12000000) ELITTLE</Cpu>
+          <PackID>Keil.STM32F4xx_DFP.2.15.0</PackID>
+          <PackURL>http://www.keil.com/pack/</PackURL>
+          <Cpu>IRAM(0x20000000,0x00018000) IROM(0x08000000,0x00080000) CPUTYPE("Cortex-M4") FPU2 CLOCK(12000000) ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
           <StartupFile></StartupFile>
-          <FlashDriverDll>UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0STM32F2xx_1024 -FS08000000 -FL040000 -FP0($$Device:STM32F207ZCTx$CMSIS\Flash\STM32F2xx_1024.FLM))</FlashDriverDll>
+          <FlashDriverDll>UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0STM32F4xx_512 -FS08000000 -FL080000 -FP0($$Device:STM32F401RETx$CMSIS\Flash\STM32F4xx_512.FLM))</FlashDriverDll>
           <DeviceId>0</DeviceId>
-          <RegisterFile>$$Device:STM32F207ZCTx$Drivers\CMSIS\Device\ST\STM32F2xx\Include\stm32f2xx.h</RegisterFile>
+          <RegisterFile>$$Device:STM32F401RETx$Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h</RegisterFile>
           <MemoryEnv></MemoryEnv>
           <Cmp></Cmp>
           <Asm></Asm>
@@ -33,7 +33,7 @@
           <SLE66CMisc></SLE66CMisc>
           <SLE66AMisc></SLE66AMisc>
           <SLE66LinkerMisc></SLE66LinkerMisc>
-          <SFDFile>$$Device:STM32F207ZCTx$CMSIS\SVD\STM32F20x.svd</SFDFile>
+          <SFDFile>$$Device:STM32F401RETx$CMSIS\SVD\STM32F401xE.svd</SFDFile>
           <bCustSvd>0</bCustSvd>
           <UseEnv>0</UseEnv>
           <BinPath></BinPath>
@@ -112,11 +112,11 @@
           <SimDllName>SARMCM3.DLL</SimDllName>
           <SimDllArguments> -REMAP -MPU</SimDllArguments>
           <SimDlgDll>DCM.DLL</SimDlgDll>
-          <SimDlgDllArguments>-pCM3</SimDlgDllArguments>
+          <SimDlgDllArguments>-pCM4</SimDlgDllArguments>
           <TargetDllName>SARMCM3.DLL</TargetDllName>
           <TargetDllArguments> -MPU</TargetDllArguments>
           <TargetDlgDll>TCM.DLL</TargetDlgDll>
-          <TargetDlgDllArguments>-pCM3</TargetDlgDllArguments>
+          <TargetDlgDllArguments>-pCM4</TargetDlgDllArguments>
         </DllOption>
         <DebugOption>
           <OPTHX>
@@ -138,7 +138,7 @@
           </Flash1>
           <bUseTDR>1</bUseTDR>
           <Flash2>BIN\UL2CM3.DLL</Flash2>
-          <Flash3>"" ()</Flash3>
+          <Flash3></Flash3>
           <Flash4></Flash4>
           <pFcarmOut></pFcarmOut>
           <pFcarmGrp></pFcarmGrp>
@@ -174,7 +174,7 @@
             <AdsLsxf>1</AdsLsxf>
             <RvctClst>0</RvctClst>
             <GenPPlst>0</GenPPlst>
-            <AdsCpuType>"Cortex-M3"</AdsCpuType>
+            <AdsCpuType>"Cortex-M4"</AdsCpuType>
             <RvctDeviceName></RvctDeviceName>
             <mOS>0</mOS>
             <uocRom>0</uocRom>
@@ -183,7 +183,7 @@
             <hadIRAM>1</hadIRAM>
             <hadXRAM>0</hadXRAM>
             <uocXRam>0</uocXRam>
-            <RvdsVP>0</RvdsVP>
+            <RvdsVP>2</RvdsVP>
             <RvdsMve>0</RvdsMve>
             <RvdsCdeCp>0</RvdsCdeCp>
             <hadIRAM2>0</hadIRAM2>
@@ -246,12 +246,12 @@
               <IRAM>
                 <Type>0</Type>
                 <StartAddress>0x20000000</StartAddress>
-                <Size>0x20000</Size>
+                <Size>0x18000</Size>
               </IRAM>
               <IROM>
                 <Type>1</Type>
                 <StartAddress>0x8000000</StartAddress>
-                <Size>0x40000</Size>
+                <Size>0x80000</Size>
               </IROM>
               <XRAM>
                 <Type>0</Type>
@@ -276,7 +276,7 @@
               <OCR_RVCT4>
                 <Type>1</Type>
                 <StartAddress>0x8000000</StartAddress>
-                <Size>0x40000</Size>
+                <Size>0x80000</Size>
               </OCR_RVCT4>
               <OCR_RVCT5>
                 <Type>1</Type>
@@ -301,7 +301,7 @@
               <OCR_RVCT9>
                 <Type>0</Type>
                 <StartAddress>0x20000000</StartAddress>
-                <Size>0x20000</Size>
+                <Size>0x18000</Size>
               </OCR_RVCT9>
               <OCR_RVCT10>
                 <Type>0</Type>
@@ -337,7 +337,7 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls>--cpp</MiscControls>
-              <Define>USE_HAL_DRIVER, STM32F207xx, __cplusplus</Define>
+              <Define>USE_HAL_DRIVER, STM32F401xE, __cplusplus</Define>
               <Undefine></Undefine>
               <IncludePath>..\STM32Cube_FW_F2\Drivers\CMSIS\Device\ST\STM32F2xx\Include;..\STM32Cube_FW_F2\Drivers\STM32F2xx_HAL_Driver\Inc;..\STM32Cube_FW_F2\Drivers\STM32F2xx_HAL_Driver\Src;..\STM32Cube_FW_F2\Middlewares\ST\STM32_USB_Device_Library\Core\Inc;..\STM32Cube_FW_F2\Middlewares\ST\STM32_USB_Device_Library\Class\CDC\Inc;..\STM32Cube_FW_F2\Middlewares\ST\STM32_USB_Device_Library\Class\CDC\Src;..\STM32Cube_FW_F2\Middlewares\ST\STM32_USB_Device_Library\Core\Src;..\STM32Cube_FW_F2\Middlewares\ST\STM32_USB_Host_Library\Class\MSC\Inc;..\STM32Cube_FW_F2\Middlewares\ST\STM32_USB_Host_Library\Class\MSC\Src;..\STM32Cube_FW_F2\Middlewares\ST\STM32_USB_Host_Library\Core\Inc;..\STM32Cube_FW_F2\Middlewares\ST\STM32_USB_Host_Library\Core\Src;..\STM32Cube_FW_F2\Middlewares\Third_Party\LwIP\src;..\STM32Cube_FW_F2\Middlewares\Third_Party\LwIP\src\include;..\STM32Cube_FW_F2\Middlewares\Third_Party\LwIP\system;..\STM32Cube_FW_F2\Middlewares\Third_Party\LwIP\src\include\ipv4;..\STM32Cube_FW_F2\Middlewares\Third_Party\FatFs\src;..\STM32Cube_FW_F2\Middlewares\Third_Party\FatFs\src\drivers;.\src;.\src\libs;..\STM32Cube_FW_F2\Middlewares\Third_Party\LwIP\src\include\lwip;..\STM32Cube_FW_F2\Drivers\CMSIS\Include</IncludePath>
             </VariousControls>
