@@ -1,9 +1,9 @@
-#include <stm32f207xx.h>
-#include <stm32f2xx_hal.h>
-#include <stm32f2xx_hal_tim.h>
-#include <stm32f2xx_hal_gpio.h>
-#include <stm32f2xx_hal_rcc.h>
-#include <stm32f2xx_hal_dac.h>
+#include <stm32f401xe.h>
+#include <stm32f4xx_hal.h>
+#include <stm32f4xx_hal_tim.h>
+#include <stm32f4xx_hal_gpio.h>
+#include <stm32f4xx_hal_rcc.h>
+#include <stm32f4xx_hal_crc.h>
 #include "Hardware.h"
 #include "Hardware/CLOCK.h"
 #include "Hardware/Timer.h"
@@ -11,16 +11,16 @@
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-static TIM_HandleTypeDef handleTIM6forTimer =
-{
-    TIM6,
-    {
-        119,                    // Init.Prescaler
-        TIM_COUNTERMODE_UP,     // Init.CounterMode
-        500,                    // Init.Period
-        TIM_CLOCKDIVISION_DIV1  // Init.ClockDivision
-    }
-};
+//static TIM_HandleTypeDef handleTIM6forTimer =
+//{
+//    TIM6,
+//    {
+//        119,                    // Init.Prescaler
+//        TIM_COUNTERMODE_UP,     // Init.CounterMode
+//        500,                    // Init.Period
+//        TIM_CLOCKDIVISION_DIV1  // Init.ClockDivision
+//    }
+//};
 
 static CRC_HandleTypeDef crcHandle;
 
@@ -45,14 +45,14 @@ void Hardware::Init(void)
     __GPIOC_CLK_ENABLE();
     __GPIOD_CLK_ENABLE();
     __GPIOE_CLK_ENABLE();
-    __GPIOF_CLK_ENABLE();
-    __GPIOG_CLK_ENABLE();
+//    __GPIOF_CLK_ENABLE();
+//    __GPIOG_CLK_ENABLE();
     __DMA1_CLK_ENABLE();        // Для DAC1 (бикалка)
     
-    __TIM6_CLK_ENABLE();        // Для отсчёта миллисекунд
+//    __TIM6_CLK_ENABLE();        // Для отсчёта миллисекунд
     __TIM2_CLK_ENABLE();        // Для тиков
-    __TIM7_CLK_ENABLE();        // Для DAC1 (бикалка)
-    __DAC_CLK_ENABLE();         // Для бикалки
+//    __TIM7_CLK_ENABLE();        // Для DAC1 (бикалка)
+//    __DAC_CLK_ENABLE();         // Для бикалки
     __PWR_CLK_ENABLE();
 
     __SYSCFG_CLK_ENABLE();
@@ -63,18 +63,18 @@ void Hardware::Init(void)
     //RCC_PCLK1Config(RCC_HCLK_Div1);
 
     // Таймер для мс
-    HAL_NVIC_SetPriority(TIM6_DAC_IRQn, 2, 0);
-    HAL_NVIC_EnableIRQ(TIM6_DAC_IRQn);
+//    HAL_NVIC_SetPriority(TIM6_DAC_IRQn, 2, 0);
+//    HAL_NVIC_EnableIRQ(TIM6_DAC_IRQn);
 
-    if (HAL_TIM_Base_Init(&handleTIM6forTimer) != HAL_OK)
-    {
-        HARDWARE_ERROR
-    }
+//    if (HAL_TIM_Base_Init(&handleTIM6forTimer) != HAL_OK)
+//    {
+//        HARDWARE_ERROR
+//    }
 
-    if (HAL_TIM_Base_Start_IT(&handleTIM6forTimer) != HAL_OK)
-    {
-        HARDWARE_ERROR
-    }
+//    if (HAL_TIM_Base_Start_IT(&handleTIM6forTimer) != HAL_OK)
+//    {
+//        HARDWARE_ERROR
+//    }
 
     // Таймер для тиков
     TIM_HandleTypeDef tim2handle =
@@ -100,23 +100,23 @@ void Hardware::Init(void)
    
 // Analog and DAC programmable SPI ////////////////////////////////////////
 
-    GPIO_InitTypeDef isGPIOG =
-    {
-        GPIO_PIN_2 | GPIO_PIN_3 | GPIO_PIN_5 | GPIO_PIN_7,     // GPIO_PIN_1 - для работы с дисплеем
-        GPIO_MODE_OUTPUT_PP,
-        GPIO_NOPULL,
-        GPIO_SPEED_HIGH,
-        GPIO_AF0_MCO
-    };
-    HAL_GPIO_Init(GPIOG, &isGPIOG);
+//    GPIO_InitTypeDef isGPIOG =
+//    {
+//        GPIO_PIN_2 | GPIO_PIN_3 | GPIO_PIN_5 | GPIO_PIN_7,     // GPIO_PIN_1 - для работы с дисплеем
+//        GPIO_MODE_OUTPUT_PP,
+//        GPIO_NOPULL,
+//        GPIO_SPEED_HIGH,
+//        GPIO_AF0_MCO
+//    };
+//    HAL_GPIO_Init(GPIOG, &isGPIOG);
 
-    isGPIOG.Pin = GPIO_PIN_1;
-    isGPIOG.Mode = GPIO_MODE_OUTPUT_PP;
-    isGPIOG.Pull = GPIO_NOPULL;
+//    isGPIOG.Pin = GPIO_PIN_1;
+//    isGPIOG.Mode = GPIO_MODE_OUTPUT_PP;
+//    isGPIOG.Pull = GPIO_NOPULL;
 
-    HAL_GPIO_Init(GPIOG, &isGPIOG);
+//    HAL_GPIO_Init(GPIOG, &isGPIOG);
     
-    HAL_GPIO_WritePin(GPIOG, GPIO_PIN_1, GPIO_PIN_RESET);                   // PG1 - когда равен 1, чтение дисплея, в остальных случаях 0
+//    HAL_GPIO_WritePin(GPIOG, GPIO_PIN_1, GPIO_PIN_RESET);                   // PG1 - когда равен 1, чтение дисплея, в остальных случаях 0
 
     Clock::Init();
 
@@ -138,15 +138,15 @@ extern "C" {
 #endif
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
-void TIM6_DAC_IRQHandler(void)
-{
-    if (__HAL_TIM_GET_FLAG(&handleTIM6forTimer, TIM_FLAG_UPDATE) == SET && __HAL_TIM_GET_ITSTATUS(&handleTIM6forTimer, TIM_IT_UPDATE))
-    {
-        Timer::Update1ms();
-        __HAL_TIM_CLEAR_FLAG(&handleTIM6forTimer, TIM_FLAG_UPDATE);
-        __HAL_TIM_CLEAR_IT(&handleTIM6forTimer, TIM_IT_UPDATE);
-    }
-}
+//void TIM6_DAC_IRQHandler(void)
+//{
+//    if (__HAL_TIM_GET_FLAG(&handleTIM6forTimer, TIM_FLAG_UPDATE) == SET && __HAL_TIM_GET_ITSTATUS(&handleTIM6forTimer, TIM_IT_UPDATE))
+//    {
+//        Timer::Update1ms();
+//        __HAL_TIM_CLEAR_FLAG(&handleTIM6forTimer, TIM_FLAG_UPDATE);
+//        __HAL_TIM_CLEAR_IT(&handleTIM6forTimer, TIM_IT_UPDATE);
+//    }
+//}
 
 #ifdef __cplusplus
 }

@@ -31,12 +31,6 @@ SPI_HandleTypeDef handleSPI =
 ADC_HandleTypeDef handleADC;
 
 
-DAC_HandleTypeDef handleDAC =
-{
-    DAC
-};
-
-
 BitField gBF =
 {
     0,  // ethTimeLastEthifInput

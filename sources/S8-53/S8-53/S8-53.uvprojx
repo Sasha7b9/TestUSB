@@ -339,7 +339,7 @@
               <MiscControls>--cpp</MiscControls>
               <Define>USE_HAL_DRIVER, STM32F401xE, __cplusplus</Define>
               <Undefine></Undefine>
-              <IncludePath>..\STM32Cube_FW_F2\Drivers\CMSIS\Device\ST\STM32F2xx\Include;..\STM32Cube_FW_F2\Drivers\STM32F2xx_HAL_Driver\Inc;..\STM32Cube_FW_F2\Drivers\STM32F2xx_HAL_Driver\Src;..\STM32Cube_FW_F2\Middlewares\ST\STM32_USB_Device_Library\Core\Inc;..\STM32Cube_FW_F2\Middlewares\ST\STM32_USB_Device_Library\Class\CDC\Inc;..\STM32Cube_FW_F2\Middlewares\ST\STM32_USB_Device_Library\Class\CDC\Src;..\STM32Cube_FW_F2\Middlewares\ST\STM32_USB_Device_Library\Core\Src;..\STM32Cube_FW_F2\Middlewares\ST\STM32_USB_Host_Library\Class\MSC\Inc;..\STM32Cube_FW_F2\Middlewares\ST\STM32_USB_Host_Library\Class\MSC\Src;..\STM32Cube_FW_F2\Middlewares\ST\STM32_USB_Host_Library\Core\Inc;..\STM32Cube_FW_F2\Middlewares\ST\STM32_USB_Host_Library\Core\Src;..\STM32Cube_FW_F2\Middlewares\Third_Party\LwIP\src;..\STM32Cube_FW_F2\Middlewares\Third_Party\LwIP\src\include;..\STM32Cube_FW_F2\Middlewares\Third_Party\LwIP\system;..\STM32Cube_FW_F2\Middlewares\Third_Party\LwIP\src\include\ipv4;..\STM32Cube_FW_F2\Middlewares\Third_Party\FatFs\src;..\STM32Cube_FW_F2\Middlewares\Third_Party\FatFs\src\drivers;.\src;.\src\libs;..\STM32Cube_FW_F2\Middlewares\Third_Party\LwIP\src\include\lwip;..\STM32Cube_FW_F2\Drivers\CMSIS\Include</IncludePath>
+              <IncludePath>..\STM32Cube_FW_F4\Drivers\CMSIS\Device\ST\STM32F4xx\Include;..\STM32Cube_FW_F4\Drivers\STM32F4xx_HAL_Driver\Inc;..\STM32Cube_FW_F4\Drivers\STM32F4xx_HAL_Driver\Src;..\STM32Cube_FW_F4\Middlewares\ST\STM32_USB_Device_Library\Core\Inc;..\STM32Cube_FW_F4\Middlewares\ST\STM32_USB_Device_Library\Class\CDC\Inc;..\STM32Cube_FW_F4\Middlewares\ST\STM32_USB_Device_Library\Class\CDC\Src;..\STM32Cube_FW_F4\Middlewares\ST\STM32_USB_Device_Library\Core\Src;..\STM32Cube_FW_F2\Middlewares\ST\STM32_USB_Host_Library\Class\MSC\Inc;..\STM32Cube_FW_F2\Middlewares\ST\STM32_USB_Host_Library\Class\MSC\Src;..\STM32Cube_FW_F4\Middlewares\ST\STM32_USB_Host_Library\Core\Inc;..\STM32Cube_FW_F2\Middlewares\ST\STM32_USB_Host_Library\Core\Src;..\STM32Cube_FW_F2\Middlewares\Third_Party\LwIP\src;..\STM32Cube_FW_F2\Middlewares\Third_Party\LwIP\src\include;..\STM32Cube_FW_F2\Middlewares\Third_Party\LwIP\system;..\STM32Cube_FW_F2\Middlewares\Third_Party\LwIP\src\include\ipv4;..\STM32Cube_FW_F2\Middlewares\Third_Party\FatFs\src;..\STM32Cube_FW_F2\Middlewares\Third_Party\FatFs\src\drivers;.\src;.\src\libs;..\STM32Cube_FW_F4\Drivers\CMSIS\Include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -382,23 +382,6 @@
       <Groups>
         <Group>
           <GroupName>HAL</GroupName>
-          <Files>
-            <File>
-              <FileName>stm32f4xx_hal.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\STM32Cube_F4\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_hal_hcd.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\STM32Cube_F4\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_hcd.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_ll_usb.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\STM32Cube_F4\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_usb.c</FilePath>
-            </File>
-          </Files>
         </Group>
         <Group>
           <GroupName>libs</GroupName>
@@ -407,21 +390,6 @@
               <FileName>stm32f2xx_it.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\src\libs\stm32f2xx_it.h</FilePath>
-            </File>
-            <File>
-              <FileName>startup_stm32f207xx.s</FileName>
-              <FileType>2</FileType>
-              <FilePath>.\src\libs\startup_stm32f207xx.s</FilePath>
-            </File>
-            <File>
-              <FileName>system_stm32f2xx.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\src\libs\system_stm32f2xx.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f2xx_hal_conf.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\libs\stm32f2xx_hal_conf.h</FilePath>
             </File>
             <File>
               <FileName>usbh_conf.h</FileName>
@@ -467,6 +435,21 @@
               <FileName>usbd_desc.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>.\src\libs\usbd_desc.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>startup_stm32f401xe.s</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\src\libs\startup_stm32f401xe.s</FilePath>
+            </File>
+            <File>
+              <FileName>system_stm32f4xx.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\libs\system_stm32f4xx.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_hal_conf.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\libs\stm32f4xx_hal_conf.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -612,49 +595,19 @@
           <GroupName>USBD</GroupName>
           <Files>
             <File>
-              <FileName>usbd_ioreq.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\STM32Cube_FW_F2\Middlewares\ST\STM32_USB_Device_Library\Core\Src\usbd_ioreq.c</FilePath>
-            </File>
-            <File>
               <FileName>usbd_ctlreq.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\STM32Cube_FW_F2\Middlewares\ST\STM32_USB_Device_Library\Core\Src\usbd_ctlreq.c</FilePath>
+              <FilePath>..\STM32Cube_FW_F4\Middlewares\ST\STM32_USB_Device_Library\Core\Src\usbd_ctlreq.c</FilePath>
+            </File>
+            <File>
+              <FileName>usbd_ioreq.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\STM32Cube_FW_F4\Middlewares\ST\STM32_USB_Device_Library\Core\Src\usbd_ioreq.c</FilePath>
             </File>
             <File>
               <FileName>usbd_core.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\STM32Cube_FW_F2\Middlewares\ST\STM32_USB_Device_Library\Core\Src\usbd_core.c</FilePath>
-            </File>
-            <File>
-              <FileName>usbd_core.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\STM32Cube_FW_F2\Middlewares\ST\STM32_USB_Device_Library\Core\Inc\usbd_core.h</FilePath>
-            </File>
-            <File>
-              <FileName>usbd_ctlreq.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\STM32Cube_FW_F2\Middlewares\ST\STM32_USB_Device_Library\Core\Inc\usbd_ctlreq.h</FilePath>
-            </File>
-            <File>
-              <FileName>usbd_def.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\STM32Cube_FW_F2\Middlewares\ST\STM32_USB_Device_Library\Core\Inc\usbd_def.h</FilePath>
-            </File>
-            <File>
-              <FileName>usbd_ioreq.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\STM32Cube_FW_F2\Middlewares\ST\STM32_USB_Device_Library\Core\Inc\usbd_ioreq.h</FilePath>
-            </File>
-            <File>
-              <FileName>usbd_cdc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\STM32Cube_FW_F2\Middlewares\ST\STM32_USB_Device_Library\Class\CDC\Src\usbd_cdc.c</FilePath>
-            </File>
-            <File>
-              <FileName>usbd_cdc.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\STM32Cube_FW_F2\Middlewares\ST\STM32_USB_Device_Library\Class\CDC\Inc\usbd_cdc.h</FilePath>
+              <FilePath>..\STM32Cube_FW_F4\Middlewares\ST\STM32_USB_Device_Library\Core\Src\usbd_core.c</FilePath>
             </File>
           </Files>
         </Group>

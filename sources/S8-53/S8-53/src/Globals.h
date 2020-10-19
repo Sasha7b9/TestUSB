@@ -1,13 +1,12 @@
 #pragma once
 #include "defines.h"
-#include <stm32f2xx_hal_def.h>
-#include "stm32f2xx_hal_conf.h"
-#include <stm32f2xx_hal_hcd.h>
-#include <stm32f2xx_hal_pcd.h>
-#include <stm32f2xx_hal_dma.h>
-#include <stm32f2xx_hal_spi.h>
-#include <stm32f2xx_hal_adc.h>
-#include <stm32f2xx_hal_dac.h>
+#include <stm32f4xx_hal_def.h>
+#include "stm32f4xx_hal_conf.h"
+#include <stm32f4xx_hal_hcd.h>
+#include <stm32f4xx_hal_pcd.h>
+#include <stm32f4xx_hal_dma.h>
+#include <stm32f4xx_hal_spi.h>
+#include <stm32f4xx_hal_adc.h>
 #include <usbd_def.h>
 #include <usbh_def.h>
 
@@ -16,7 +15,6 @@ extern USBH_HandleTypeDef handleUSBH;
 extern HCD_HandleTypeDef handleHCD;
 extern SPI_HandleTypeDef handleSPI;
 extern ADC_HandleTypeDef handleADC;
-extern DAC_HandleTypeDef handleDAC;
 
 
 #define CLIENT_LAN_IS_CONNECTED  (gBF.clientLANisConnected)
