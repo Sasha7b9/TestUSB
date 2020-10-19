@@ -1,6 +1,4 @@
 #include "defines.h"
-#include "SCPI/SCPI.h"
-#include "Log.h"
 #include "Hardware/Timer.h"
 #include "Hardware/VCP.h"
 #include <usbd_cdc.h>
@@ -107,8 +105,6 @@ static int8_t CDC_Itf_Control (uint8 cmd, uint8* pbuf, uint16)
 
 static int8_t CDC_Itf_Receive(uint8 *buffer, uint *length) //-V2009 //-V2558
 {
-    SCPI::AppendNewData(reinterpret_cast<const char *>(buffer), *reinterpret_cast<int *>(length));
-
     USBD_CDC_ReceivePacket(reinterpret_cast<USBD_HandleTypeDef *>(VCP::handleUSBD));
 
     return (USBD_OK);

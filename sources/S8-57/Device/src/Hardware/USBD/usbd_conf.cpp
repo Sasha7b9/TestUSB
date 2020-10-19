@@ -1,10 +1,7 @@
 #include "defines.h"
 #include "usbd_core.h"
-#include "Log.h"
-#include "Display/Display.h"
 #include <stm32f4xx_hal.h>
 #include "Hardware/VCP.h"
-#include "Settings/Settings.h"
 
 
 /*******************************************************************************

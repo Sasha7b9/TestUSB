@@ -1,11 +1,8 @@
 #include "defines.h"
-#include "log.h"
 #include "Hardware/Timer.h"
 #include "Hardware/VCP.h"
 #include "Hardware/HAL/HAL.h"
 #include "Hardware/HAL/HAL_PINS.h"
-#include "Tester/Tester.h"
-#include "Utils/Debug.h"
 #include <stm32f4xx_hal.h>
 
 
@@ -15,21 +12,8 @@ INTERRUPT_BEGIN
 
 void HardFault_Handler()
 {
-    __IO const char *file0 = Debug::file[0];
-    __IO const char *file1 = Debug::file[1];
-    __IO int line0 = Debug::line[0];
-    __IO int line1 = Debug::line[1];
-    __IO int line2 = Debug::line[2];
-    
     while (1) //-V776
     {
-        file0 = file0; //-V570
-        file1 = file1; //-V570
-        line0 = line0; //-V570
-        line1 = line1; //-V570
-        line2 = line2; //-V570
-
-        NVIC_SystemReset();
     }
 }
 
@@ -105,7 +89,7 @@ void OTG_HS_IRQHandler()
 //    }
 
 
-    HAL_HCD_IRQHandler(reinterpret_cast<HCD_HandleTypeDef *>(HAL_HCD::handleHCD));
+//    HAL_HCD_IRQHandler(reinterpret_cast<HCD_HandleTypeDef *>(HAL_HCD::handleHCD));
 }
 
 
@@ -158,10 +142,6 @@ void PendSV_Handler(void)
 
 void HAL_GPIO_EXTI_Callback(uint16 pin)
 {
-    if(pin == HPin::_9)      // Прерывание от тестер-компонента
-    {
-        Tester::ProcessStep();
-    }
 }
 
 INTERRUPT_END

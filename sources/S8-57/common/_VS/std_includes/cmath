@@ -1,8 +1,0 @@
-#pragma once
-
-bool isnan(float);
-
-namespace std
-{
-#include "math.h"
-}

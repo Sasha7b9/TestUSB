@@ -1,5 +1,4 @@
 #include "defines.h"
-#include "Hardware/PowerBreaker.h"
 #include "Hardware/HAL/HAL.h"
 #include <stm32f4xx_hal.h>
 
@@ -41,17 +40,7 @@ void HAL::Init()
 
     SystemClockConfig();
 
-    PowerBreaker::Init();
-
-    HAL_CRC32::Init();
-
-    HAL_BUS::Init();
-
-    HAL_SPI4::Init();
-
     HAL_PCD::Init();
-
-    HAL_HCD::Init();
 }
 
 

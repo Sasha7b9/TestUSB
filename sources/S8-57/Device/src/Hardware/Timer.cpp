@@ -1,5 +1,4 @@
 #include "defines.h"
-#include "log.h"
 #include "Timer.h"
 #include <climits>
 #include "Hardware/HAL/HAL.h"
@@ -240,7 +239,6 @@ uint Timer::LogPointUS(char * name)
 {
     uint interval = TIME_TICKS - timePrevPoint;
     timePrevPoint = TIME_TICKS;
-    LOG_WRITE("%s %.2f us", name, interval / 120.0);
     return interval;
 }
 
@@ -249,7 +247,6 @@ uint Timer::LogPointMS(char * name)
 {
     uint interval = TIME_TICKS - timePrevPoint;
     timePrevPoint = TIME_TICKS;
-    LOG_WRITE("%s %.2f ms", name, interval / 120e3);
     return interval;
 }
 

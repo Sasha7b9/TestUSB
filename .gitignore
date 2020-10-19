@@ -11,5 +11,6 @@
 *.lst
 *.map
 *.bak
+*.bin
 
 sources/S8-57/Device/Objects/*
