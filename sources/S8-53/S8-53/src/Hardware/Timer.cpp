@@ -11,43 +11,6 @@ static bool isRun[TypeTimerSize] = {false};
 
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
-void Timer::StartMultiMeasurement(void)
-{
-    TIM2->CR1 &= (uint16)~TIM_CR1_CEN;
-    TIM2->CNT = 0;
-    TIM2->CR1 |= TIM_CR1_CEN; 
-}
-
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-static uint timeStartLogging = 0;
-static uint timePrevPoint = 0;
-
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-void Timer::StartLogging()
-{
-    timeStartLogging = gTimerTics;
-    timePrevPoint = timeStartLogging;
-}
-
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-uint Timer::LogPointUS(char *name)
-{
-    uint interval = gTimerTics - timePrevPoint;
-    timePrevPoint = gTimerTics;
-    LOG_WRITE("%s %.2f us", name, interval / 120.0f);
-    return interval;
-}
-
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-uint Timer::LogPointMS(char *name)
-{
-    uint interval = gTimerTics - timePrevPoint;
-    timePrevPoint = gTimerTics;
-    LOG_WRITE("%s %.2f ms", name, interval / 120e3);
-    return interval;
-}
-
-//----------------------------------------------------------------------------------------------------------------------------------------------------
 void Timer::Enable(TypeTimer type, int timeInMS, void(*eF)())
 {
     f[type] = eF;

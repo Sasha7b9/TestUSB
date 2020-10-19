@@ -34,14 +34,6 @@ public:
     static void Continue(TypeTimer type);
     /// С помощью этой функции можно узнать, работает ли таймер.
     static bool IsRun(TypeTimer type);
-    /// Запускает счётчик для измерения малых отрезков времени.
-    static void StartMultiMeasurement();
-    /// Устанавливает стартовую точку логгирования. Далее вызовы Timer_LogPoint засекают временные интервалы от это точки.
-    static void StartLogging();
-    
-    static uint LogPointUS(char *name);
-    
-    static uint LogPointMS(char *name);
 };
 
 #define gTimerMS HAL_GetTick()
