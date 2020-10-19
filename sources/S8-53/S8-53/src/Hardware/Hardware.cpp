@@ -39,19 +39,9 @@ void Hardware::Init(void)
 
     SystemClock_Config();
 
-    __GPIOA_CLK_ENABLE();
-    __GPIOB_CLK_ENABLE();
-    __GPIOC_CLK_ENABLE();
-    __GPIOD_CLK_ENABLE();
-    __GPIOE_CLK_ENABLE();
-    __GPIOF_CLK_ENABLE();
-    __GPIOG_CLK_ENABLE();
-    __DMA1_CLK_ENABLE();        // Для DAC1 (бикалка)
-    
     __TIM6_CLK_ENABLE();        // Для отсчёта миллисекунд
     __TIM2_CLK_ENABLE();        // Для тиков
-    __TIM7_CLK_ENABLE();        // Для DAC1 (бикалка)
-    __DAC_CLK_ENABLE();         // Для бикалки
+//    __DAC_CLK_ENABLE();         // Для бикалки
     __PWR_CLK_ENABLE();
 
     __SYSCFG_CLK_ENABLE();
@@ -98,24 +88,6 @@ void Hardware::Init(void)
     }
    
 // Analog and DAC programmable SPI ////////////////////////////////////////
-
-    GPIO_InitTypeDef isGPIOG =
-    {
-        GPIO_PIN_2 | GPIO_PIN_3 | GPIO_PIN_5 | GPIO_PIN_7,     // GPIO_PIN_1 - для работы с дисплеем
-        GPIO_MODE_OUTPUT_PP,
-        GPIO_NOPULL,
-        GPIO_SPEED_HIGH,
-        GPIO_AF0_MCO
-    };
-    HAL_GPIO_Init(GPIOG, &isGPIOG);
-
-    isGPIOG.Pin = GPIO_PIN_1;
-    isGPIOG.Mode = GPIO_MODE_OUTPUT_PP;
-    isGPIOG.Pull = GPIO_NOPULL;
-
-    HAL_GPIO_Init(GPIOG, &isGPIOG);
-    
-    HAL_GPIO_WritePin(GPIOG, GPIO_PIN_1, GPIO_PIN_RESET);                   // PG1 - когда равен 1, чтение дисплея, в остальных случаях 0
 
     crcHandle.Instance = CRC;
     if (HAL_CRC_Init(&crcHandle) != HAL_OK)
