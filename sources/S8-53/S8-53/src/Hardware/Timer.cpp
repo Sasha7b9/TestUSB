@@ -18,39 +18,3 @@ void Timer::Enable(TypeTimer type, int timeInMS, void(*eF)())
     currentTimeMS[type] = timeInMS - 1;
     isRun[type] = true;
 }
-
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-void Timer_Pause(TypeTimer type)
-{
-    isRun[type] = false;
-}
-
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-void Timer_Continue(TypeTimer type)
-{
-    isRun[type] = true;
-}
-
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-bool Timer_IsRun(TypeTimer type)
-{
-    return isRun[type];
-};
-
-//----------------------------------------------------------------------------------------------------------------------------------------------------
-void Timer_Update10ms(void)
-{
-    for(int num = 0; num < TypeTimerSize; num++)
-    {
-        if(isRun[num])
-        {
-            currentTimeMS[num] -= 10;
-            if(currentTimeMS[num] < 0)
-            {
-                f[num]();
-                currentTimeMS[num] = reactionTimeMS[num] - 1;
-            }
-
-        }
-    }
-}
