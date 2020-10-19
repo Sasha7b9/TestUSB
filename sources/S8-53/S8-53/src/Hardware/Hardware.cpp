@@ -39,9 +39,6 @@ void Hardware::Init(void)
 
     SystemClock_Config();
 
-    __TIM6_CLK_ENABLE();        // Для отсчёта миллисекунд
-    __TIM2_CLK_ENABLE();        // Для тиков
-//    __DAC_CLK_ENABLE();         // Для бикалки
     __PWR_CLK_ENABLE();
 
     __SYSCFG_CLK_ENABLE();
@@ -65,28 +62,7 @@ void Hardware::Init(void)
         HARDWARE_ERROR
     }
 
-    // Таймер для тиков
-    TIM_HandleTypeDef tim2handle =
-    {
-        TIM2,
-        {
-            0,
-            TIM_COUNTERMODE_UP,
-            0xffffffff,
-            TIM_CLOCKDIVISION_DIV1
-        }
-    };
-
-    if (HAL_TIM_Base_Init(&tim2handle) != HAL_OK)
-    {
-        HARDWARE_ERROR
-    }
-
-    if (HAL_TIM_Base_Start(&tim2handle) != HAL_OK)
-    {
-        HARDWARE_ERROR
-    }
-   
+  
 // Analog and DAC programmable SPI ////////////////////////////////////////
 
     crcHandle.Instance = CRC;
