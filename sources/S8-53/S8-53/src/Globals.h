@@ -1,6 +1,5 @@
 #pragma once
 #include "defines.h"
-#include "stm32f2xx_hal_conf.h"
 #include <stm32f2xx_hal_hcd.h>
 #include <stm32f2xx_hal_pcd.h>
 #include <stm32f2xx_hal_dma.h>
