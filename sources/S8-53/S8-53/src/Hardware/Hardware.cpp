@@ -37,24 +37,6 @@ void Hardware::Init(void)
 
     HAL_NVIC_SetPriority(SysTick_IRQn, 0, 0);
 
-    // Timer  /////////////////////////////////////////////////////////////////
-    //RCC_PCLK1Config(RCC_HCLK_Div1);
-
-    // Таймер для мс
-    HAL_NVIC_SetPriority(TIM6_DAC_IRQn, 2, 0);
-    HAL_NVIC_EnableIRQ(TIM6_DAC_IRQn);
-
-    if (HAL_TIM_Base_Init(&handleTIM6forTimer) != HAL_OK)
-    {
-        HARDWARE_ERROR
-    }
-
-    if (HAL_TIM_Base_Start_IT(&handleTIM6forTimer) != HAL_OK)
-    {
-        HARDWARE_ERROR
-    }
-
-  
     static CRC_HandleTypeDef crcHandle = {CRC};
 
     if (HAL_CRC_Init(&crcHandle) != HAL_OK)
