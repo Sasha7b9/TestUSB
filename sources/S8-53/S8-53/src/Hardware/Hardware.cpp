@@ -21,7 +21,7 @@ static TIM_HandleTypeDef handleTIM6forTimer =
     }
 };
 
-static CRC_HandleTypeDef crcHandle;
+static CRC_HandleTypeDef crcHandle = {CRC};
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -65,7 +65,6 @@ void Hardware::Init(void)
   
 // Analog and DAC programmable SPI ////////////////////////////////////////
 
-    crcHandle.Instance = CRC;
     if (HAL_CRC_Init(&crcHandle) != HAL_OK)
     {
         HARDWARE_ERROR;
