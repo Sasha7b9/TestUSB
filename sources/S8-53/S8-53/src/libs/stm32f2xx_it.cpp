@@ -100,6 +100,11 @@ void DMA1_Stream5_IRQHandler()
     HAL_DMA_IRQHandler(handleDAC.DMA_Handle1);
 }
 
+
+void TIM6_DAC_IRQHandler(void)
+{
+}
+
 #ifdef __cplusplus
 }
 #endif
