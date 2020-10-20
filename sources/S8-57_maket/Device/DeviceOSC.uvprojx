@@ -650,11 +650,6 @@
               <FilePath>.\src\main.h</FilePath>
             </File>
             <File>
-              <FileName>defines.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\defines.cpp</FilePath>
-            </File>
-            <File>
               <FileName>device.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>.\src\device.cpp</FilePath>
