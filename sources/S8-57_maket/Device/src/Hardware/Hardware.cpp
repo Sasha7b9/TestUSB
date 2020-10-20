@@ -8,8 +8,6 @@
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-static DAC_HandleTypeDef hdac;
-
 static SPI_HandleTypeDef hspi4;
 
 static PCD_HandleTypeDef hpcd_USB_OTG_HS;
@@ -36,7 +34,6 @@ void Hardware::Init()
     Timer::Init();
 
     //MX_ADC3_Init();
-    MX_DAC_Init();
     //MX_SPI4_Init();
     //MX_USB_OTG_FS_PCD_Init();
     //MX_USB_OTG_HS_PCD_Init();
@@ -109,37 +106,6 @@ void Hardware::MX_ADC3_Init(void)
 
 }
 
-/* DAC init function */
-void Hardware::MX_DAC_Init(void)
-{
-
-    DAC_ChannelConfTypeDef sConfig;
-
-    /**DAC Initialization 
-    */
-    hdac.Instance = DAC;
-    if (HAL_DAC_Init(&hdac) != HAL_OK)
-    {
-        ERROR_HANDLER();
-    }
-
-    /**DAC channel OUT1 config 
-    */
-    sConfig.DAC_Trigger = DAC_TRIGGER_NONE;
-    sConfig.DAC_OutputBuffer = DAC_OUTPUTBUFFER_ENABLE;
-    if (HAL_DAC_ConfigChannel(&hdac, &sConfig, DAC_CHANNEL_1) != HAL_OK)
-    {
-        ERROR_HANDLER();
-    }
-
-    /**DAC channel OUT2 config 
-    */
-    if (HAL_DAC_ConfigChannel(&hdac, &sConfig, DAC_CHANNEL_2) != HAL_OK)
-    {
-        ERROR_HANDLER();
-    }
-
-}
 
 /* SPI4 init function */
 void Hardware::MX_SPI4_Init(void)
