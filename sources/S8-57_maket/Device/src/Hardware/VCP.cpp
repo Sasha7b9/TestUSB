@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "usbd_desc.h"
 #include "usbd_cdc_interface.h"
 #ifndef WIN32

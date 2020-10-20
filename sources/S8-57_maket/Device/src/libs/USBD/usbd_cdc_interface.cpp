@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #ifndef WIN32
 #include "main.h"
 #include "defines.h"
