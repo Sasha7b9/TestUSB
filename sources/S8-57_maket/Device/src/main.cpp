@@ -1,16 +1,18 @@
 #ifndef WIN32
 #include "defines.h"
-#include "Device.h"
+#include "Hardware/Hardware.h"
+#include "Hardware/VCP.h"
 #endif
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 int main(void)
 {
-    Device::Init();
+    Hardware::Init();
 
-    while (1)
+    VCP::Init();
+
+    while(1)
     {
-        Device::Update();
     }
 }

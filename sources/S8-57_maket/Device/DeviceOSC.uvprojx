@@ -644,16 +644,6 @@
               <FileType>8</FileType>
               <FilePath>.\src\main.cpp</FilePath>
             </File>
-            <File>
-              <FileName>device.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\device.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>device.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\device.h</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>
