@@ -3,7 +3,6 @@
 #include "usbd_cdc_interface.h"
 #ifndef WIN32
 #include "defines.h"
-#include "Hardware/CPU.h"
 #include "Hardware/VCP.h"
 #include "usbd_desc.h"
 #include <stdarg.h>
