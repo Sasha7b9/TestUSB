@@ -1,0 +1,9 @@
+#pragma once
+
+namespace std
+{
+    void *malloc(size_t);
+    void free(void *);
+
+    #include <stdlib.h>
+}
