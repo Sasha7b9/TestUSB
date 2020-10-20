@@ -4,7 +4,6 @@
 #include "usbd_core.h"
 #include <stm32f4xx_hal.h>
 #include "Hardware/CPU.h"
-#include "Hardware/Timer.h"
 #include "Hardware/Hardware.h"
 #include "Hardware/VCP.h"
 #endif
@@ -258,5 +257,5 @@ uint32_t USBD_LL_GetRxDataSize(USBD_HandleTypeDef *pdev, uint8_t  ep_addr)
 
 void  USBD_LL_Delay(uint32_t Delay)
 {
-    Timer::PauseOnTime(Delay);
+    HAL_Delay(Delay);
 }

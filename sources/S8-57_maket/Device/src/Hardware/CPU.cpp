@@ -3,7 +3,6 @@
 #include <stm32f4xx.h>
 #include "defines.h"
 #include "CPU.h"
-#include "Hardware/Timer.h"
 #endif
 
 

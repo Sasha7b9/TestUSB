@@ -2,14 +2,11 @@
 #ifndef WIN32
 #include "defines.h"
 #include "Hardware.h"
-#include "Timer.h"
 #endif
 #include <stm32f4xx_hal.h>
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-static SPI_HandleTypeDef hspi4;
-
 static PCD_HandleTypeDef hpcd_USB_OTG_HS;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -28,8 +25,6 @@ void Hardware::Init()
     HAL_Init();
     SystemClock_Config();
     MX_GPIO_Init();
-    Timer::Init();
-
 }
 
 /** System Clock Configuration
@@ -87,35 +82,6 @@ void Hardware::SystemClock_Config(void)
     HAL_NVIC_SetPriority(SysTick_IRQn, 0, 0);
 }
 
-
-/* ADC3 init function */
-void Hardware::MX_ADC3_Init(void)
-{
-
-}
-
-
-/* SPI4 init function */
-void Hardware::MX_SPI4_Init(void)
-{
-    hspi4.Instance = SPI4;
-    hspi4.Init.Mode = SPI_MODE_MASTER;
-    hspi4.Init.Direction = SPI_DIRECTION_2LINES;
-    hspi4.Init.DataSize = SPI_DATASIZE_8BIT;
-    hspi4.Init.CLKPolarity = SPI_POLARITY_LOW;
-    hspi4.Init.CLKPhase = SPI_PHASE_1EDGE;
-    hspi4.Init.NSS = SPI_NSS_HARD_INPUT;
-    hspi4.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_2;
-    hspi4.Init.FirstBit = SPI_FIRSTBIT_MSB;
-    hspi4.Init.TIMode = SPI_TIMODE_DISABLE;
-    hspi4.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
-    hspi4.Init.CRCPolynomial = 10;
-    if (HAL_SPI_Init(&hspi4) != HAL_OK)
-    {
-        ERROR_HANDLER();
-    }
-
-}
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 void Hardware::MX_USB_OTG_HS_PCD_Init(void)

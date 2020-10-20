@@ -1,7 +1,6 @@
 #include "stdafx.h"
 #ifndef WIN32
 #include "defines.h"
-#include "Hardware/Timer.h"
 #include "Hardware/VCP.h"
 #endif
 
@@ -46,7 +45,6 @@ void TIM3_IRQHandler()
         if ((TIM3->DIER & TIM_DIER_UIE) == TIM_DIER_UIE)
         {
             TIM3->SR = ~TIM_DIER_UIE;
-            Timer::ElapsedCallback();
         }
     }
 }

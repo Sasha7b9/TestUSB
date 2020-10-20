@@ -3,7 +3,6 @@
 #include "defines.h"
 #include "main.h"
 #include "Device.h"
-#include "Hardware/Timer.h"
 #endif
 
 

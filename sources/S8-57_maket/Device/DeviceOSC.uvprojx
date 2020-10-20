@@ -895,21 +895,6 @@
               <FilePath>.\src\Hardware\Hardware.h</FilePath>
             </File>
             <File>
-              <FileName>Timer.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Hardware\Timer.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>Timer.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\Hardware\Timer.h</FilePath>
-            </File>
-            <File>
-              <FileName>Timer_437.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Hardware\Timer_437.cpp</FilePath>
-            </File>
-            <File>
               <FileName>VCP.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>.\src\Hardware\VCP.cpp</FilePath>
@@ -943,16 +928,6 @@
               <FileName>stm437.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\src\Hardware\stm32\stm437.h</FilePath>
-            </File>
-            <File>
-              <FileName>Timer4XX.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Hardware\stm32\Timer4XX.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>Timer4XX.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\Hardware\stm32\Timer4XX.h</FilePath>
             </File>
           </Files>
         </Group>
