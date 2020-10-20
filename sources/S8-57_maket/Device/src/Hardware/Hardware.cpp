@@ -53,7 +53,7 @@ void Hardware::SystemClock_Config(void)
     RCC_OscInitStruct.PLL.PLLQ = 5;
     if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
     {
-        ERROR_HANDLER();
+//        ERROR_HANDLER();
     }
 
     /**Initializes the CPU, AHB and APB busses clocks 
@@ -67,7 +67,7 @@ void Hardware::SystemClock_Config(void)
 
     if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_3) != HAL_OK)
     {
-        ERROR_HANDLER();
+//        ERROR_HANDLER();
     }
 
     /**Configure the Systick interrupt time 
@@ -100,7 +100,7 @@ void Hardware::MX_USB_OTG_HS_PCD_Init(void)
     hpcd_USB_OTG_HS.Init.use_external_vbus = DISABLE;
     if (HAL_PCD_Init(&hpcd_USB_OTG_HS) != HAL_OK)
     {
-        ERROR_HANDLER();
+//        ERROR_HANDLER();
     }
 
 }
