@@ -7,8 +7,4 @@ class STM437 : public STM32
 protected:
 
     static void Init();
-
-private:
-
-    static void SystemClockConfig();
 };
