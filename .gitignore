@@ -13,5 +13,5 @@
 *.bak
 *.bin
 
-sources/S8-57/Device/Objects/*
-sources/S8-57_maket/Device/Objects/*
+sources/Device/Objects/*
+sources/Device/Listings/*
