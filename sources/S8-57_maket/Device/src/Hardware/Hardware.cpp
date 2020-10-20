@@ -83,29 +83,6 @@ void Hardware::SystemClock_Config(void)
 }
 
 
-//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-void Hardware::MX_USB_OTG_HS_PCD_Init(void)
-{
-    hpcd_USB_OTG_HS.Instance = USB_OTG_HS;
-    hpcd_USB_OTG_HS.Init.dev_endpoints = 6;
-    hpcd_USB_OTG_HS.Init.speed = PCD_SPEED_FULL;
-    hpcd_USB_OTG_HS.Init.dma_enable = DISABLE;
-    hpcd_USB_OTG_HS.Init.ep0_mps = DEP0CTL_MPS_64;
-    hpcd_USB_OTG_HS.Init.phy_itface = USB_OTG_EMBEDDED_PHY;
-    hpcd_USB_OTG_HS.Init.Sof_enable = DISABLE;
-    hpcd_USB_OTG_HS.Init.low_power_enable = DISABLE;
-    hpcd_USB_OTG_HS.Init.lpm_enable = DISABLE;
-    hpcd_USB_OTG_HS.Init.vbus_sensing_enable = DISABLE;
-    hpcd_USB_OTG_HS.Init.use_dedicated_ep1 = DISABLE;
-    hpcd_USB_OTG_HS.Init.use_external_vbus = DISABLE;
-    if (HAL_PCD_Init(&hpcd_USB_OTG_HS) != HAL_OK)
-    {
-//        ERROR_HANDLER();
-    }
-
-}
-
-
 void Hardware::MX_GPIO_Init(void)
 {
 
