@@ -316,5 +316,3 @@ enum StateWorkFPGA
     type func = funcs[index].val;                                           \
     SAFE_HANDLER_3(func, param1, param2, param3)
 
-
-#include "log.h"

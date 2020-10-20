@@ -2,15 +2,12 @@
 #ifndef WIN32
 #include "defines.h"
 #include "Hardware.h"
-#include "FSMC.h"
 #include "Timer.h"
-#include "Sound.h"
 #endif
+#include <stm32f4xx_hal.h>
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-static ADC_HandleTypeDef hadc3;
-
 static DAC_HandleTypeDef hdac;
 
 static SPI_HandleTypeDef hspi4;
@@ -37,8 +34,6 @@ void Hardware::Init()
     SystemClock_Config();
     MX_GPIO_Init();
     Timer::Init();
-    FSMC::Init();
-    Sound::Init();
 
     //MX_ADC3_Init();
     MX_DAC_Init();
@@ -111,37 +106,6 @@ void Hardware::SystemClock_Config(void)
 /* ADC3 init function */
 void Hardware::MX_ADC3_Init(void)
 {
-
-    ADC_ChannelConfTypeDef sConfig;
-
-    /**Configure the global features of the ADC (Clock, Resolution, Data Alignment and number of conversion) 
-    */
-    hadc3.Instance = ADC3;
-    hadc3.Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV2;
-    hadc3.Init.Resolution = ADC_RESOLUTION_12B;
-    hadc3.Init.ScanConvMode = DISABLE;
-    hadc3.Init.ContinuousConvMode = DISABLE;
-    hadc3.Init.DiscontinuousConvMode = DISABLE;
-    hadc3.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_RISING;
-    hadc3.Init.ExternalTrigConv = ADC_EXTERNALTRIGCONV_Ext_IT11;
-    hadc3.Init.DataAlign = ADC_DATAALIGN_RIGHT;
-    hadc3.Init.NbrOfConversion = 1;
-    hadc3.Init.DMAContinuousRequests = DISABLE;
-    hadc3.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
-    if (HAL_ADC_Init(&hadc3) != HAL_OK)
-    {
-        ERROR_HANDLER();
-    }
-
-    /**Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time. 
-    */
-    sConfig.Channel = ADC_CHANNEL_8;
-    sConfig.Rank = 1;
-    sConfig.SamplingTime = ADC_SAMPLETIME_3CYCLES;
-    if (HAL_ADC_ConfigChannel(&hadc3, &sConfig) != HAL_OK)
-    {
-        ERROR_HANDLER();
-    }
 
 }
 

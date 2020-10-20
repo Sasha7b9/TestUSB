@@ -19,7 +19,7 @@ void Timer4XX::Init(TIM_TypeDef *instance, uint prescaler, uint counterMode, uin
     }
     else
     {
-        LOG_ERROR("");
+//        LOG_ERROR("");
     }
 
     handler.Instance = instance;
@@ -98,6 +98,5 @@ void Timer4XX::DeInit()
     }
     else
     {
-        LOG_ERROR("");
-    }
+  }
 }

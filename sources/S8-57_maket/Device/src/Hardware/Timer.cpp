@@ -2,7 +2,6 @@
 #ifndef WIN32
 #include <stm32f4xx.h>
 #include "defines.h"
-#include "log.h"
 #include "Timer.h"
 #include "stm32/Timer4XX.h"
 #include <climits>
@@ -250,7 +249,6 @@ uint Timer::LogPointUS(char * name)
 {
     uint interval = TIME_TICKS - timePrevPoint;
     timePrevPoint = TIME_TICKS;
-    LOG_WRITE("%s %.2f us", name, interval / 120.0);
     return interval;
 }
 
@@ -259,6 +257,6 @@ uint Timer::LogPointMS(char * name)
 {
     uint interval = TIME_TICKS - timePrevPoint;
     timePrevPoint = TIME_TICKS;
-    LOG_WRITE("%s %.2f ms", name, interval / 120e3);
+//    LOG_WRITE("%s %.2f ms", name, interval / 120e3);
     return interval;
 }

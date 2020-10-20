@@ -49,30 +49,6 @@ void CPU::RTC_::SetCorrection(int8)
 {
 }
 
-//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-PackedTime CPU::RTC_::GetPackedTime()
-{
-    PackedTime time;
-
-    RTC_TimeTypeDef isTime;
-
-    HAL_RTC_GetTime((RTC_HandleTypeDef*)&rtcHandle, &isTime, FORMAT_BIN);
-
-    time.hours = isTime.Hours;
-    time.minutes = isTime.Minutes;
-    time.seconds = isTime.Seconds;
-
-    RTC_DateTypeDef isDate;
-    HAL_RTC_GetDate((RTC_HandleTypeDef*)&rtcHandle, &isDate, FORMAT_BIN);
-
-    time.year = isDate.Year;
-    time.month = isDate.Month;
-    time.day = isDate.Date;
-
-    time.timeMS = TIME_MS;
-
-    return time;
-}
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 bool CPU::RTC_::SetTimeAndData(int8 day, int8 month, int8 year, int8 hours, int8 minutes, int8 seconds)

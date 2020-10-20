@@ -1,9 +1,7 @@
 #include "stdafx.h"
 #ifndef WIN32
 #include "defines.h"
-#include "log.h"
 #include "Math.h"
-#include "Settings/Settings.h"
 #include <cmath>
 #include <stdlib.h>
 #include <cstring>
@@ -142,77 +140,6 @@ int Math::Pow10(int pow)
     return retValue;
 }
 
-//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-uint8 Math::MaxFromArray(const uint8 *data, int firstPoint, int lastPoint)
-{
-
-#define MAX_IF_ABOVE if(d > max) { max = d; }
-
-    uint8 max = 0;
-    const uint8 *pointer = &data[firstPoint];
-
-    for (int i = firstPoint; i < lastPoint; i += 2)
-    {
-        uint8 d = *pointer++;
-        MAX_IF_ABOVE;
-        d = *pointer++;
-        MAX_IF_ABOVE;
-    }
-    if ((lastPoint - firstPoint + 1) & 1)
-    {
-        uint8 d = *pointer;
-        MAX_IF_ABOVE
-    }
-
-    return max;
-}
-
-//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-uint8 Math::MinFromArray(const uint8 *data, int firstPoint, int lastPoint)
-{
-
-#define MIN_IF_LESS if(d < min) { min = d; }
-
-    uint8 min = 255;
-    const uint8 *pointer = &data[firstPoint];
-
-    for (int i = firstPoint; i < lastPoint; i += 2)
-    {
-        uint8 d = *pointer++;
-        MIN_IF_LESS
-            d = *pointer++;
-        MIN_IF_LESS
-    }
-    if ((lastPoint - firstPoint + 1) & 1)
-    {
-        uint8 d = *pointer;
-        MIN_IF_LESS
-    }
-
-    return min;
-}
-
-//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-uint8 Math::MaxFromArrayWithErrorCode(const uint8 *data, int firstPoint, int lastPoint)
-{
-    uint8 max = Math::MaxFromArray(data, firstPoint, lastPoint);
-    if (max >= MAX_VALUE)
-    {
-        max = ERROR_VALUE_UINT8;
-    }
-    return max;
-}
-
-//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-uint8 Math::MinFromArrayWithErrorCode(const uint8 *data, int firstPoint, int lastPoint)
-{
-    uint8 min = Math::MinFromArray(data, firstPoint, lastPoint);
-    if (min < MIN_VALUE || min >= MAX_VALUE)
-    {
-        min = ERROR_VALUE_UINT8;
-    }
-    return min;
-}
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 float Math::GetIntersectionWithHorizontalLine(int x0, int y0, int x1, int y1, int yHorLine)
@@ -223,35 +150,6 @@ float Math::GetIntersectionWithHorizontalLine(int x0, int y0, int x1, int y1, in
     }
 
     return (yHorLine - y0) / ((float)(y1 - y0) / (float)(x1 - x0)) + x0;
-}
-
-//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-void Math::CalculateMathFunction(float *dataAandResult, const float *dataB, int numPoints)
-{
-    if (MATH_FUNC_IS_SUM)
-    {
-        int delta = dataB - dataAandResult;
-        float *end = &dataAandResult[numPoints];
-        while (dataAandResult < end)
-        {
-            *dataAandResult += *(dataAandResult + delta);
-            dataAandResult++;
-        }
-    }
-    else if (MATH_FUNC_IS_MUL)
-    {
-        int delta = dataB - dataAandResult;
-        float *end = &dataAandResult[numPoints];
-        while (dataAandResult < end)
-        {
-            *dataAandResult *= *(dataAandResult + delta);
-            dataAandResult++;
-        }
-    }
-    else
-    {
-        // здесь ничего
-    }
 }
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -334,62 +232,6 @@ void Math::CalculateFiltrArray(const uint8 *dataIn, uint8 *dataOut, int numPoint
     }
 }
 
-//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-uint8 Math::MaxFromArray_RAM(const uint16 *data, int firstPoint, int lastPoint)
-{
-    uint8 max = 0;
-
-    const uint16 *pointer = &data[firstPoint];
-
-    const int endPoint = lastPoint / 2;
-
-    for (int i = firstPoint; i < endPoint; i++)
-    {
-        uint16 d16 = *pointer++;
-
-        uint8 d8 = (uint8)d16;
-        if (d8 > max)
-        {
-            max = d8;
-        }
-
-        d8 = (uint8)(d16 >> 8);
-        if (d8 > max)
-        {
-            max = d8;
-        }
-    }
-
-    return max;
-}
-
-//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-uint8 Math::MinFromArray_RAM(const uint16 *data, int firstPoint, int lastPoint)
-{
-    uint8 min = 255;
-
-    const uint16 *pointer = &data[firstPoint];
-
-    const int endPoint = lastPoint / 2;
-
-    for (int i = firstPoint; i < endPoint; i++)
-    {
-        uint16 d16 = *pointer++;
-
-        uint8 d8 = (uint8)d16;
-        if (d8 < min)
-        {
-            min = d8;
-        }
-        d8 = (uint8)(d16 >> 8);
-        if (d8 < min)
-        {
-            min = d8;
-        }
-    }
-
-    return min;
-}
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 int Math::FindAnotherElement(const uint8 *data, uint8 value, int numElements)
@@ -410,7 +252,6 @@ int Math::DigitsInIntPart(float value)
 {
     if (value == std::numeric_limits<float>::infinity())
     {
-        LOG_WRITE("Nan value %f", value);
         return 2;
     }
 

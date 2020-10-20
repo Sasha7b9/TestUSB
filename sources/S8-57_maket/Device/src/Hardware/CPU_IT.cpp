@@ -1,10 +1,6 @@
 #include "stdafx.h"
 #ifndef WIN32
 #include "defines.h"
-#include "Sound.h"
-#include "Utils/Debug.h"
-#include "FlashDrive/FlashDrive.h"      
-#include "FPGA/FPGA.h"
 #include "Hardware/Timer.h"
 #include "Hardware/VCP.h"
 #endif
@@ -17,13 +13,8 @@ extern "C" {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void HardFault_Handler()
 {
-    __IO char *file = Debug::file;
-    __IO int line = Debug::line;
-
     while (1)           // -V776
     {
-        file = file;    // -V570
-        line = line;    // -V570
     }
 }
 
@@ -31,31 +22,21 @@ void HardFault_Handler()
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 void DMA1_Stream5_IRQHandler()
 {
-    HAL_DMA_IRQHandler(Sound::handleDAC.DMA_Handle1);
+//    HAL_DMA_IRQHandler(Sound::handleDAC.DMA_Handle1);
 }
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 void USART3_IRQHandler(void)
 {
-    HAL_UART_IRQHandler(&Multimeter::handlerUART);
+//    HAL_UART_IRQHandler(&Multimeter::handlerUART);
 }
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 void ADC_IRQHandler(void)
 {
-    HAL_ADC_IRQHandler(FPGA::HandleADC());
+//    HAL_ADC_IRQHandler(FPGA::HandleADC());
 }
 
-//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
-{
-    /// \todo временная затычка. Не в рандомизаторе эта функция вообще не должна вызываться
-
-    if (IN_RANDOM_MODE)
-    {
-        FPGA::SetValueADC((uint16)HAL_ADC_GetValue(hadc));
-    }
-}
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 void TIM3_IRQHandler()
@@ -93,7 +74,7 @@ void OTG_FS_IRQHandler()
 // Флешка
 void OTG_HS_IRQHandler()
 {
-    HAL_HCD_IRQHandler(&FDrive::handleHCD);
+//    HAL_HCD_IRQHandler(&FDrive::handleHCD);
 }
 
 

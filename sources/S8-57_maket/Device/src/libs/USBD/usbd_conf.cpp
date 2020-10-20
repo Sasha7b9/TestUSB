@@ -2,14 +2,11 @@
 #ifndef WIN32
 #include "defines.h"
 #include "usbd_core.h"
-#include "Log.h"
-#include "Display/Display.h"
 #include <stm32f4xx_hal.h>
 #include "Hardware/CPU.h"
 #include "Hardware/Timer.h"
 #include "Hardware/Hardware.h"
 #include "Hardware/VCP.h"
-#include "Settings/Settings.h"
 #endif
 
 
@@ -39,7 +36,7 @@ void HAL_PCD_SetupStageCallback(PCD_HandleTypeDef *hpcd)
             else                                                    //
             {                                                       //
                 CONNECTED_TO_USB = false;                           //
-                Settings::Save();                                   // При отконнекчивании сохраняем настройки
+//                Settings::Save();                                   // При отконнекчивании сохраняем настройки
             }                                                       /// \todo Возможно, это не нужно делать
             //CONNECTED_TO_USB = prevLength != 0;                   // 
         }                                                           //
