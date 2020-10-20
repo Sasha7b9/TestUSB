@@ -1,5 +1,4 @@
 #ifndef WIN32
-#include "main.h"
 #include "defines.h"
 #include "Hardware/VCP.h"
 #include <usbd_cdc.h>

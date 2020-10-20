@@ -1,6 +1,5 @@
 #ifndef WIN32
 #include "defines.h"
-#include "main.h"
 #include "Device.h"
 #endif
 

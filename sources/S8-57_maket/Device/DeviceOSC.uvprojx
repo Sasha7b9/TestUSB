@@ -645,11 +645,6 @@
               <FilePath>.\src\main.cpp</FilePath>
             </File>
             <File>
-              <FileName>main.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\main.h</FilePath>
-            </File>
-            <File>
               <FileName>device.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>.\src\device.cpp</FilePath>
