@@ -37,14 +37,6 @@ USBD_CDC_ItfTypeDef USBD_CDC_fops =
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-static void SetAttributeConnected()
-{
-    CABLE_USB_IS_CONNECTED = true;
-    CONNECTED_TO_USB = false;
-}
-
-
-//----------------------------------------------------------------------------------------------------------------------------------------------------
 static int8_t CDC_Itf_Init()
 {
     USBD_CDC_SetRxBuffer(&VCP::handleUSBD, UserRxBuffer);
