@@ -3,7 +3,6 @@
 #include "defines.h"
 #include "Device.h"
 #include "Hardware/VCP.h"
-#include "Utils/Math.h"
 #include <stdlib.h>
 #include <cmath>
 #endif

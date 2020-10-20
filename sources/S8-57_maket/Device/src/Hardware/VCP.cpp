@@ -6,9 +6,20 @@
 #include "Hardware/CPU.h"
 #include "Hardware/VCP.h"
 #include "usbd_desc.h"
-#include "Utils/Math.h"
 #include <stdarg.h>
 #endif
+
+namespace Math
+{
+template<class T>
+T Min(T x1, T x2)
+{
+    return (x1 < x2) ? x1 : x2;
+}
+
+}
+
+#define LIMITATION(var, min, max)           if(var < (min)) { (var) = (min); } else if(var > (max)) { var = (max); };
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
