@@ -16,17 +16,13 @@ void Hardware::Init()
     RCC->AHB1ENR |= RCC_AHB1ENR_GPIOCEN;
     RCC->AHB1ENR |= RCC_AHB1ENR_GPIODEN;
     RCC->AHB1ENR |= RCC_AHB1ENR_GPIOEEN;
-    RCC->AHB1ENR |= RCC_AHB1ENR_GPIOFEN;
-    RCC->AHB1ENR |= RCC_AHB1ENR_GPIOGEN;
     RCC->AHB1ENR |= RCC_AHB1ENR_GPIOHEN;
-    RCC->AHB1ENR |= RCC_AHB1ENR_GPIOJEN;
     
     HAL_Init();
     SystemClock_Config();
 }
 
-/** System Clock Configuration
-*/
+
 void Hardware::SystemClock_Config(void)
 {
 
