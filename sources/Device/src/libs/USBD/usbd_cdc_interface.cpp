@@ -110,11 +110,19 @@ static int8_t CDC_Itf_Control (uint8 cmd, uint8* pbuf, uint16)
     return (USBD_OK);
 }
 
+static uint8 newbuff[100] = {0};
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 static int8_t CDC_Itf_Receive(uint8 *buffer, uint *length)
 {
+//    VCP::SendDataSynch(buffer, *length);
+    
     USBD_CDC_ReceivePacket(&VCP::handleUSBD);
-
+    std::memcpy(newbuff, buffer, *length);
     return (USBD_OK);
+}
+
+uint8 * VCP::BuffRx()
+{
+    return newbuff;
 }

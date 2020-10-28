@@ -61,6 +61,8 @@ void VCP::SendDataAsynch(const uint8 *buffer, uint size)
 #define SIZE_BUFFER_VCP 256     /// \todo если поставить размер буфера 512, то на ТЕ207 глюки
 static uint8 buffSend[SIZE_BUFFER_VCP];
 static int sizeBuffer = 0;
+//static uint8 buffReceive[SIZE_BUFFER_VCP];
+//static int sizeBufferRx = 0;
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 void VCP::Flush()
@@ -162,3 +164,4 @@ void VCP::SendByte(uint8 byte)
 {
     SendDataSynch(&byte, 1);
 }
+

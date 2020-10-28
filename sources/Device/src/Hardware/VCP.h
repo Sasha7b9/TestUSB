@@ -46,6 +46,9 @@ public:
     static bool connectedToUSB;
 
     static bool cableUSBisConnected;
+    
+    static uint8 * BuffRx();
+    
 
 private:
     static bool PrevSendingComplete();
